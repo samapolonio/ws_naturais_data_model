@@ -84,7 +84,9 @@ CREATE  TABLE IF NOT EXISTS `ws_naturais_db`.`produtos` (
   `preco_atual` DECIMAL NULL COMMENT 'Preço atual do produto, atualizado a cada remessa.' ,
   `estoque_critico` INT NULL COMMENT 'Estoque mínimo a ser considerado para emissão de novos pedidos.' ,
   `estoque_virtual` INT NULL COMMENT 'Estoque virtual considerando os pedidos realizados pelos clientes.' ,
-  `estoque_virtual_ped_emitidos` INT NULL COMMENT 'Estoque virtual considerando os pedidos já emitidos para a fábrica.' ,
+  `estoque_fisico` INT NULL COMMENT 'Estoque considerando a retirada de produtos no estoque da empresa.' ,
+  `peso` DECIMAL NULL COMMENT 'Peso do produto.' ,
+  `qtd_caixa` INT NULL COMMENT 'Quantidade de unidades do produto por caixa.' ,
   `dt_inclusao` TIMESTAMP NOT NULL COMMENT 'Data de inclusão do registro no banco de dados.' ,
   `dt_atualizacao` TIMESTAMP NULL COMMENT 'Data de atualização do registro no banco de dados.' ,
   PRIMARY KEY (`id_produtos`) )
@@ -254,9 +256,10 @@ CREATE  TABLE IF NOT EXISTS `ws_naturais_db`.`pedidos` (
   `perc_desconto` DECIMAL NULL COMMENT 'Percentual de desconto concedido ao pedido.' ,
   `in_nf` VARCHAR(1) NULL COMMENT 'Indicador de emissão de Nota Fiscal.' ,
   `dt_situacao_atual` TIMESTAMP NULL COMMENT 'Data da situação atual do pedido.' ,
-  `vl_total` DECIMAL NULL COMMENT 'Valor derivado a partir do preço e da quantidade de cada produto no pedido.' ,
+  `vl_total` DECIMAL NULL COMMENT 'Valor total do pedido. Derivado a partir do preço e da quantidade de cada produto no pedido.' ,
   `dt_inclusao` TIMESTAMP NOT NULL COMMENT 'Data de inclusão do registro no banco de dados.' ,
   `dt_atualizacao` TIMESTAMP NULL COMMENT 'Data de atualização do registro no banco de dados.' ,
+  `vl_liquido` DECIMAL NULL COMMENT 'Valor total do pedido considerando descontos.' ,
   PRIMARY KEY (`id_pedidos`) ,
   INDEX `fk_pedidos_tp_situacoes_pedido1` (`situacoes_pedido_id` ASC) ,
   INDEX `fk_pedidos_tp_formas_pagto1` (`formas_pagto_id` ASC) ,
@@ -421,6 +424,33 @@ CREATE  TABLE IF NOT EXISTS `ws_naturais_db`.`clientes_categorias` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'Relação entre categorias e clientes. Indica quais clientes e' /* comment truncated */;
+
+
+-- -----------------------------------------------------
+-- Table `ws_naturais_db`.`h_produtos`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `ws_naturais_db`.`h_produtos` (
+  `id_h_produtos` INT NOT NULL COMMENT 'Número sequencial da tabela de histórico de produtos.' ,
+  `produtos_id` INT NOT NULL COMMENT 'Número sequencial do produto no banco de dados.' ,
+  `nome` VARCHAR(100) NULL COMMENT 'Nome do produto.' ,
+  `imagem` VARCHAR(100) NULL COMMENT 'Endereço da imagem do produto no servidor.' ,
+  `preco_atual` DECIMAL NULL COMMENT 'Preço atual do produto, atualizado a cada remessa.' ,
+  `estoque_critico` INT NULL COMMENT 'Estoque mínimo a ser considerado para emissão de novos pedidos.' ,
+  `estoque_virtual` INT NULL COMMENT 'Estoque virtual considerando os pedidos realizados pelos clientes.' ,
+  `estoque_fisico` INT NULL COMMENT 'Estoque considerando a retirada de produtos no estoque da empresa.' ,
+  `peso` DECIMAL NULL COMMENT 'Peso do produto.' ,
+  `qtd_caixa` INT NULL COMMENT 'Quantidade de unidades do produto por caixa.' ,
+  `dt_inclusao` TIMESTAMP NOT NULL COMMENT 'Data de inclusão do registro no banco de dados.' ,
+  `dt_atualizacao` TIMESTAMP NULL COMMENT 'Data de atualização do registro no banco de dados.' ,
+  PRIMARY KEY (`id_h_produtos`) ,
+  INDEX `fk_h_produtos_produtos1` (`produtos_id` ASC) ,
+  CONSTRAINT `fk_h_produtos_produtos1`
+    FOREIGN KEY (`produtos_id` )
+    REFERENCES `ws_naturais_db`.`produtos` (`id_produtos` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+COMMENT = 'Tabela de histórico de Produtos.';
 
 
 
