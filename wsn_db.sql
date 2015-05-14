@@ -2,8 +2,6 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
 
-CREATE SCHEMA IF NOT EXISTS `wsn_db` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci ;
-USE `wsn_db` ;
 
 -- -----------------------------------------------------
 -- Table `wsn_db`.`transacoes`
@@ -114,7 +112,6 @@ COMMENT = 'Lista de UF do Brasil.';
 CREATE  TABLE IF NOT EXISTS `wsn_db`.`cidades` (
   `id_cidades` INT NOT NULL AUTO_INCREMENT COMMENT 'Número sequencial da cidade no banco de dados.' ,
   `uf_id` INT NOT NULL COMMENT 'Número sequencial da UF no banco de dados.' ,
-  `uf_sigla` VARCHAR(4) NOT NULL ,
   `nome` VARCHAR(50) NOT NULL COMMENT 'Nome da cidade.' ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
   `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
@@ -155,33 +152,51 @@ COMMENT = 'Relação entre perfis e transações. Indica quais perfis possu' /* 
 
 
 -- -----------------------------------------------------
+-- Table `wsn_db`.`bairros`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `wsn_db`.`bairros` (
+  `id_bairros` INT NOT NULL ,
+  `cidades_id` INT NOT NULL COMMENT 'Número sequencial da cidade no banco de dados.' ,
+  `nome` VARCHAR(50) NULL ,
+  `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
+  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
+  PRIMARY KEY (`id_bairros`) ,
+  INDEX `fk_bairros_cidades1` (`cidades_id` ASC) ,
+  CONSTRAINT `fk_bairros_cidades1`
+    FOREIGN KEY (`cidades_id` )
+    REFERENCES `wsn_db`.`cidades` (`id_cidades` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `wsn_db`.`enderecos`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `wsn_db`.`enderecos` (
   `id_enderecos` INT NOT NULL AUTO_INCREMENT COMMENT ' Número sequencial do endereço no banco de dados.' ,
   `clientes_id` INT NOT NULL COMMENT 'Número sequencial do cliente no banco de dados.' ,
-  `cidades_id` INT NOT NULL COMMENT 'Número sequencial da cidade no banco de dados.' ,
+  `bairros_id` INT NOT NULL ,
   `tp_logradouro` VARCHAR(20) NULL COMMENT 'Tipo de logradouro. Ex: Avenida, Rua, Travessa etc.' ,
   `logradouro` VARCHAR(60) NULL COMMENT 'Nome do logradouro.' ,
   `numero` VARCHAR(10) NULL COMMENT 'Número no logradouro.' ,
   `complemento` VARCHAR(50) NULL COMMENT 'Complemento do endereço.' ,
-  `bairro` VARCHAR(50) NULL COMMENT 'Nome do Bairro' ,
   `cep` VARCHAR(9) NULL COMMENT 'Código de Endereçamento Postal.' ,
   `latitude` VARCHAR(100) NULL COMMENT 'Latitude do endereço.' ,
   `longitude` VARCHAR(100) NULL COMMENT 'Longitude do endereço.' ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
   `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
-  INDEX `fk_enderecos_cidades1` (`cidades_id` ASC) ,
   PRIMARY KEY (`id_enderecos`, `clientes_id`) ,
   INDEX `fk_enderecos_clientes1` (`clientes_id` ASC) ,
-  CONSTRAINT `fk_enderecos_cidades1`
-    FOREIGN KEY (`cidades_id` )
-    REFERENCES `wsn_db`.`cidades` (`id_cidades` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+  INDEX `fk_enderecos_bairros1` (`bairros_id` ASC) ,
   CONSTRAINT `fk_enderecos_clientes1`
     FOREIGN KEY (`clientes_id` )
     REFERENCES `wsn_db`.`clientes` (`id_clientes` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_enderecos_bairros1`
+    FOREIGN KEY (`bairros_id` )
+    REFERENCES `wsn_db`.`bairros` (`id_bairros` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -291,7 +306,7 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`produtos_pedidos` (
   `quant` INT NULL COMMENT 'Quantidade do produto no pedido.' ,
   `preco` DECIMAL NULL COMMENT 'Preço do produto no pedido.' ,
   `dt_inclusao` TIMESTAMP NOT NULL COMMENT 'Data de inclusão do registro no banco de dados.' ,
-  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
+  `dt_atualizacao` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
   PRIMARY KEY (`produtos_id`, `pedidos_id`) ,
   INDEX `fk_produtos_has_pedidos_pedidos1` (`pedidos_id` ASC) ,
   INDEX `fk_produtos_has_pedidos_produtos1` (`produtos_id` ASC) ,
