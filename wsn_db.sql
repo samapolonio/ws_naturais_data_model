@@ -2,6 +2,8 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
 
+CREATE SCHEMA IF NOT EXISTS `wsn_db` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci ;
+USE `wsn_db` ;
 
 -- -----------------------------------------------------
 -- Table `wsn_db`.`transacoes`
@@ -12,7 +14,7 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`transacoes` (
   `descricao` VARCHAR(100) NULL COMMENT 'Descrição da transação.' ,
   `url` VARCHAR(200) NULL COMMENT 'URL associada à transação.' ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
-  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
+  `dt_atualizacao` TIMESTAMP NULL COMMENT 'Data de atualização do registro no banco de dados.' ,
   PRIMARY KEY (`id_transacoes`) )
 ENGINE = InnoDB
 COMMENT = 'Transações do sistema para as ações do usuário.';
@@ -26,7 +28,7 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`perfis` (
   `nome` VARCHAR(30) NOT NULL COMMENT 'Nome do perfil.' ,
   `descricao` VARCHAR(100) NULL COMMENT 'Descrição do perfil.' ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
-  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
+  `dt_atualizacao` TIMESTAMP NULL COMMENT 'Data de atualização do registro no banco de dados.' ,
   PRIMARY KEY (`id_perfis`) )
 ENGINE = InnoDB
 COMMENT = 'Perfis (papeis) dos usuários no sistema.';
@@ -42,8 +44,9 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`usuarios` (
   `senha` VARCHAR(10) NULL COMMENT 'Senha do usuário.' ,
   `email` VARCHAR(100) NULL COMMENT 'Email do usuário.' ,
   `cargo` VARCHAR(30) NULL COMMENT 'Cargo do usuário: administrador ou vendedor' ,
+  `in_situacao` VARCHAR(1) NULL COMMENT 'Situação do Usuário: Ativo (S) ou Inativo (N)' ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
-  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Cargo do usuário: administrador ou vendedor' ,
+  `dt_atualizacao` TIMESTAMP NULL COMMENT 'Cargo do usuário: administrador ou vendedor' ,
   PRIMARY KEY (`id_usuarios`) ,
   INDEX `fk_usuarios_perfis1` (`perfis_id` ASC) ,
   CONSTRAINT `fk_usuarios_perfis1`
@@ -64,9 +67,9 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`clientes` (
   `inscricao_estadual` VARCHAR(45) NULL COMMENT 'Inscrição estadual do cliente.' ,
   `razao_social` VARCHAR(200) NULL COMMENT 'Razão social do cliente.' ,
   `nome_fantasia` VARCHAR(200) NULL COMMENT 'Nome fantasia do cliente.' ,
-  `situacao` VARCHAR(1) NULL COMMENT 'Situação do cliente: Ativo ou Inativo' ,
+  `in_situacao` VARCHAR(1) NULL COMMENT 'Situação do cliente: Ativo (S) ou Inativo (N)' ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
-  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
+  `dt_atualizacao` TIMESTAMP NULL COMMENT 'Data de atualização do registro no banco de dados.' ,
   PRIMARY KEY (`id_clientes`) )
 ENGINE = InnoDB
 COMMENT = 'Clientes que podem fazer pedidos de produtos.';
@@ -86,7 +89,7 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`produtos` (
   `peso` DECIMAL NULL COMMENT 'Peso do produto.' ,
   `qtd_caixa` INT NULL COMMENT 'Quantidade de unidades do produto por caixa.' ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
-  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
+  `dt_atualizacao` TIMESTAMP NULL COMMENT 'Data de atualização do registro no banco de dados.' ,
   PRIMARY KEY (`id_produtos`) )
 ENGINE = InnoDB
 COMMENT = 'Produtos tratados pelo Sistema.';
@@ -99,8 +102,9 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`uf` (
   `id_uf` INT NOT NULL AUTO_INCREMENT COMMENT 'Número sequencial da UF no banco de dados.' ,
   `sigla` VARCHAR(2) NOT NULL COMMENT 'Sigla da UF' ,
   `nome` VARCHAR(20) NOT NULL COMMENT 'Nome da UF' ,
+  `in_habilitacao` VARCHAR(1) NULL ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
-  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
+  `dt_atualizacao` TIMESTAMP NULL COMMENT 'Indica se o registro está habilitado para uso no sistema: Habilitado (S) ou Não habilitado (N)' ,
   PRIMARY KEY (`id_uf`) )
 ENGINE = InnoDB
 COMMENT = 'Lista de UF do Brasil.';
@@ -111,11 +115,12 @@ COMMENT = 'Lista de UF do Brasil.';
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `wsn_db`.`cidades` (
   `id_cidades` INT NOT NULL AUTO_INCREMENT COMMENT 'Número sequencial da cidade no banco de dados.' ,
-  `uf_id` INT NOT NULL COMMENT 'Número sequencial da UF no banco de dados.' ,
+  `uf_id` INT NOT NULL ,
   `nome` VARCHAR(50) NOT NULL COMMENT 'Nome da cidade.' ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
-  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
-  PRIMARY KEY (`id_cidades`) ,
+  `in_habilitacao` VARCHAR(1) NULL COMMENT 'Indica se o registro está habilitado para uso no sistema: Habilitado (S) ou Não habilitado (N)' ,
+  `dt_atualizacao` TIMESTAMP NULL COMMENT 'Data de atualização do registro no banco de dados.' ,
+  PRIMARY KEY (`id_cidades`, `uf_id`) ,
   INDEX `fk_cidades_uf1` (`uf_id` ASC) ,
   CONSTRAINT `fk_cidades_uf1`
     FOREIGN KEY (`uf_id` )
@@ -133,7 +138,7 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`perfis_transacoes` (
   `transacoes_id` INT NOT NULL COMMENT 'Número sequencial da transação no banco de dados.' ,
   `perfis_id` INT NOT NULL COMMENT 'Número sequencial do perfil no banco de dados.' ,
   `dt_inclusao` TIMESTAMP NOT NULL COMMENT 'Data de inclusão do registro no banco de dados.' ,
-  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
+  `dt_atualizacao` TIMESTAMP NULL COMMENT 'Data de atualização do registro no banco de dados.' ,
   PRIMARY KEY (`transacoes_id`, `perfis_id`) ,
   INDEX `fk_transacoes_has_perfis_perfis1` (`perfis_id` ASC) ,
   INDEX `fk_transacoes_has_perfis_transacoes1` (`transacoes_id` ASC) ,
@@ -156,15 +161,17 @@ COMMENT = 'Relação entre perfis e transações. Indica quais perfis possu' /* 
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `wsn_db`.`bairros` (
   `id_bairros` INT NOT NULL ,
-  `cidades_id` INT NOT NULL COMMENT 'Número sequencial da cidade no banco de dados.' ,
+  `cidades_id` INT NOT NULL ,
+  `cidades_uf_id` INT NOT NULL ,
   `nome` VARCHAR(50) NULL ,
+  `in_habilitacao` VARCHAR(1) NULL COMMENT 'Indica se o registro está habilitado para uso no sistema: Habilitado (S) ou Não habilitado (N)' ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
-  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
+  `dt_atualizacao` TIMESTAMP NULL COMMENT 'Data de atualização do registro no banco de dados.' ,
   PRIMARY KEY (`id_bairros`) ,
-  INDEX `fk_bairros_cidades1` (`cidades_id` ASC) ,
+  INDEX `fk_bairros_cidades1` (`cidades_id` ASC, `cidades_uf_id` ASC) ,
   CONSTRAINT `fk_bairros_cidades1`
-    FOREIGN KEY (`cidades_id` )
-    REFERENCES `wsn_db`.`cidades` (`id_cidades` )
+    FOREIGN KEY (`cidades_id` , `cidades_uf_id` )
+    REFERENCES `wsn_db`.`cidades` (`id_cidades` , `uf_id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -185,7 +192,7 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`enderecos` (
   `latitude` VARCHAR(100) NULL COMMENT 'Latitude do endereço.' ,
   `longitude` VARCHAR(100) NULL COMMENT 'Longitude do endereço.' ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
-  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
+  `dt_atualizacao` TIMESTAMP NULL COMMENT 'Data de atualização do registro no banco de dados.' ,
   PRIMARY KEY (`id_enderecos`, `clientes_id`) ,
   INDEX `fk_enderecos_clientes1` (`clientes_id` ASC) ,
   INDEX `fk_enderecos_bairros1` (`bairros_id` ASC) ,
@@ -211,7 +218,7 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`situacoes_pedido` (
   `nome` VARCHAR(30) NULL COMMENT 'Nome da situação do pedido.' ,
   `descricao` VARCHAR(100) NULL COMMENT 'Descrição da situação do pedido.' ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
-  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
+  `dt_atualizacao` TIMESTAMP NULL COMMENT 'Data de atualização do registro no banco de dados.' ,
   PRIMARY KEY (`id_situacoes_pedido`) )
 ENGINE = InnoDB
 COMMENT = 'Situações que o pedido pode assumir:\n1 - Não emitido\n2 - Emi' /* comment truncated */;
@@ -225,7 +232,7 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`formas_pagto` (
   `nome` VARCHAR(30) NULL COMMENT 'Nome da forma de pagamento.' ,
   `descricao` VARCHAR(100) NULL COMMENT 'Descrição da forma de pagamento.' ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
-  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualizaçao do registro no banco de dados.' ,
+  `dt_atualizacao` TIMESTAMP NULL COMMENT 'Data de atualizaçao do registro no banco de dados.' ,
   PRIMARY KEY (`id_formas_pagto`) )
 ENGINE = InnoDB
 COMMENT = 'Formas de pagamento do pedido.';
@@ -239,7 +246,7 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`tp_pedidos` (
   `nome` VARCHAR(30) NULL COMMENT 'Nome do tipo de pedidos.' ,
   `descricao` VARCHAR(100) NULL COMMENT 'Descrição do tipo de pedidos.' ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
-  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
+  `dt_atualizacao` TIMESTAMP NULL COMMENT 'Data de atualização do registro no banco de dados.' ,
   PRIMARY KEY (`id_tp_pedidos`) )
 ENGINE = InnoDB
 COMMENT = 'Tipos de pedidos:\n1 - Venda\n2 - Consignado\n3 - Bonificação\n4' /* comment truncated */;
@@ -261,7 +268,7 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`pedidos` (
   `vl_total` DECIMAL NULL COMMENT 'Valor total do pedido. Derivado a partir do preço e da quantidade de cada produto no pedido.' ,
   `vl_liquido` DECIMAL NULL COMMENT 'Valor total do pedido considerando descontos.' ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
-  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
+  `dt_atualizacao` TIMESTAMP NULL COMMENT 'Data de atualização do registro no banco de dados.' ,
   PRIMARY KEY (`id_pedidos`) ,
   INDEX `fk_pedidos_tp_situacoes_pedido1` (`situacoes_pedido_id` ASC) ,
   INDEX `fk_pedidos_tp_formas_pagto1` (`formas_pagto_id` ASC) ,
@@ -330,7 +337,7 @@ COMMENT = 'Relação entre produtos e pedidos. Indica quais produtos estã' /* c
 CREATE  TABLE IF NOT EXISTS `wsn_db`.`remessas` (
   `id_remessas` INT NOT NULL AUTO_INCREMENT COMMENT 'Número sequencial da remessa no banco de dados.' ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
-  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
+  `dt_atualizacao` TIMESTAMP NULL COMMENT 'Data de atualização do registro no banco de dados.' ,
   PRIMARY KEY (`id_remessas`) )
 ENGINE = InnoDB
 COMMENT = 'Remessas de produtos enviadas da fábrica.';
@@ -345,7 +352,7 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`produtos_remessas` (
   `quant` INT NULL COMMENT 'Quantidade do produto na remessa.' ,
   `preco` DECIMAL NULL COMMENT 'Preço do produto na remessa.' ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
-  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
+  `dt_atualizacao` TIMESTAMP NULL COMMENT 'Data de atualização do registro no banco de dados.' ,
   PRIMARY KEY (`produtos_id`, `remessas_id`) ,
   INDEX `fk_produtos_has_remessas_remessas1` (`remessas_id` ASC) ,
   INDEX `fk_produtos_has_remessas_produtos1` (`produtos_id` ASC) ,
@@ -373,7 +380,7 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`contatos` (
   `telefone` VARCHAR(45) NULL COMMENT 'Telefone do contato.' ,
   `email` VARCHAR(45) NULL COMMENT 'e-mail do contato.' ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
-  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
+  `dt_atualizacao` TIMESTAMP NULL COMMENT 'Data de atualização do registro no banco de dados.' ,
   PRIMARY KEY (`id_contatos`, `clientes_id`) ,
   INDEX `fk_contatos_clientes1` (`clientes_id` ASC) ,
   CONSTRAINT `fk_contatos_clientes1`
@@ -397,7 +404,7 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`categorias` (
   `limite_superior` DECIMAL NULL COMMENT 'Limite superior do volume de vendas da categoria.' ,
   `qtd_dias` INT NULL COMMENT 'Intervalo de vendas considerado para aferir limites inferior e superior da categoria.' ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
-  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
+  `dt_atualizacao` TIMESTAMP NULL COMMENT 'Data de atualização do registro no banco de dados.' ,
   PRIMARY KEY (`id_categorias`) )
 ENGINE = InnoDB
 COMMENT = 'Categorias de clientes de acordo com o seu volume de compra.';
@@ -410,7 +417,7 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`clientes_categorias` (
   `clientes_id` INT NOT NULL COMMENT 'Número sequencial do cliente no banco de dados.' ,
   `categorias_id` INT NOT NULL COMMENT 'Número sequencial da categoria no banco de dados.' ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
-  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
+  `dt_atualizacao` TIMESTAMP NULL COMMENT 'Data de atualização do registro no banco de dados.' ,
   PRIMARY KEY (`clientes_id`, `categorias_id`) ,
   INDEX `fk_clientes_has_categorias_categorias1` (`categorias_id` ASC) ,
   INDEX `fk_clientes_has_categorias_clientes1` (`clientes_id` ASC) ,
@@ -443,7 +450,7 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`h_produtos` (
   `peso` DECIMAL NULL COMMENT 'Peso do produto.' ,
   `qtd_caixa` INT NULL COMMENT 'Quantidade de unidades do produto por caixa.' ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
-  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
+  `dt_atualizacao` TIMESTAMP NULL COMMENT 'Data de atualização do registro no banco de dados.' ,
   PRIMARY KEY (`id_h_produtos`) ,
   INDEX `fk_h_produtos_produtos1` (`produtos_id` ASC) ,
   CONSTRAINT `fk_h_produtos_produtos1`
