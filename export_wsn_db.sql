@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `Bairro` (
   `nome` varchar(50) DEFAULT NULL,
   `in_habilitacao` varchar(1) DEFAULT NULL COMMENT 'Indica se o registro está habilitado para uso no sistema: Habilitado (S) ou Não habilitado (N)',
   `dt_inclusao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.',
-  `dt_atualizacao` timestamp NULL DEFAULT NULL COMMENT 'Data de atualização do registro no banco de dados.',
+  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.',
   PRIMARY KEY (`id_bairro`),
   KEY `fk_bairros_cidades1` (`cidade_id`,`cidade_uf_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -2582,7 +2582,7 @@ CREATE TABLE IF NOT EXISTS `Categoria` (
   `limite_superior` decimal(10,0) DEFAULT NULL COMMENT 'Limite superior do volume de vendas da categoria.',
   `qtd_dias` int(11) DEFAULT NULL COMMENT 'Intervalo de vendas considerado para aferir limites inferior e superior da categoria.',
   `dt_inclusao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.',
-  `dt_atualizacao` timestamp NULL DEFAULT NULL COMMENT 'Data de atualização do registro no banco de dados.',
+  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.',
   PRIMARY KEY (`id_categoria`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Categorias de clientes de acordo com o seu volume de compra.' AUTO_INCREMENT=1 ;
 
@@ -2598,7 +2598,7 @@ CREATE TABLE IF NOT EXISTS `Cidade` (
   `nome` varchar(50) NOT NULL COMMENT 'Nome da cidade.',
   `dt_inclusao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.',
   `in_habilitacao` varchar(1) DEFAULT NULL COMMENT 'Indica se o registro está habilitado para uso no sistema: Habilitado (S) ou Não habilitado (N)',
-  `dt_atualizacao` timestamp NULL DEFAULT NULL COMMENT 'Data de atualização do registro no banco de dados.',
+  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.',
   PRIMARY KEY (`id_cidade`,`uf_id`),
   KEY `fk_cidades_uf1` (`uf_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Cidades do Brasil.' AUTO_INCREMENT=10492 ;
@@ -2909,7 +2909,7 @@ CREATE TABLE IF NOT EXISTS `Cliente` (
   `nome_fantasia` varchar(200) DEFAULT NULL COMMENT 'Nome fantasia do cliente.',
   `in_situacao` varchar(1) DEFAULT NULL COMMENT 'Situação do cliente: Ativo (S) ou Inativo (N)',
   `dt_inclusao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.',
-  `dt_atualizacao` timestamp NULL DEFAULT NULL COMMENT 'Data de atualização do registro no banco de dados.',
+  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.',
   PRIMARY KEY (`id_cliente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Clientes que podem fazer pedidos de produtos.' AUTO_INCREMENT=1 ;
 
@@ -2923,7 +2923,7 @@ CREATE TABLE IF NOT EXISTS `Cliente_Categoria` (
   `cliente_id` int(11) NOT NULL COMMENT 'Número sequencial do cliente no banco de dados.',
   `categoria_id` int(11) NOT NULL COMMENT 'Número sequencial da categoria no banco de dados.',
   `dt_inclusao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.',
-  `dt_atualizacao` timestamp NULL DEFAULT NULL COMMENT 'Data de atualização do registro no banco de dados.',
+  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.',
   PRIMARY KEY (`cliente_id`,`categoria_id`),
   KEY `fk_clientes_has_categorias_categorias1` (`categoria_id`),
   KEY `fk_clientes_has_categorias_clientes1` (`cliente_id`)
@@ -2942,7 +2942,7 @@ CREATE TABLE IF NOT EXISTS `Contato` (
   `telefone` varchar(45) DEFAULT NULL COMMENT 'Telefone do contato.',
   `email` varchar(45) DEFAULT NULL COMMENT 'e-mail do contato.',
   `dt_inclusao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.',
-  `dt_atualizacao` timestamp NULL DEFAULT NULL COMMENT 'Data de atualização do registro no banco de dados.',
+  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.',
   PRIMARY KEY (`id_contato`,`cliente_id`),
   KEY `fk_contatos_clientes1` (`cliente_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Pessoas e meios de contato do cliente.' AUTO_INCREMENT=1 ;
@@ -2965,7 +2965,7 @@ CREATE TABLE IF NOT EXISTS `Endereco` (
   `latitude` varchar(100) DEFAULT NULL COMMENT 'Latitude do endereço.',
   `longitude` varchar(100) DEFAULT NULL COMMENT 'Longitude do endereço.',
   `dt_inclusao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.',
-  `dt_atualizacao` timestamp NULL DEFAULT NULL COMMENT 'Data de atualização do registro no banco de dados.',
+  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.',
   PRIMARY KEY (`id_enderecos`,`cliente_id`),
   KEY `fk_enderecos_clientes1` (`cliente_id`),
   KEY `fk_enderecos_bairros1` (`bairro_id`)
@@ -2982,7 +2982,7 @@ CREATE TABLE IF NOT EXISTS `Forma_Pagto` (
   `nome` varchar(30) DEFAULT NULL COMMENT 'Nome da forma de pagamento.',
   `descricao` varchar(100) DEFAULT NULL COMMENT 'Descrição da forma de pagamento.',
   `dt_inclusao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.',
-  `dt_atualizacao` timestamp NULL DEFAULT NULL COMMENT 'Data de atualizaçao do registro no banco de dados.',
+  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualizaçao do registro no banco de dados.',
   PRIMARY KEY (`id_forma_pagto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Formas de pagamento do pedido.' AUTO_INCREMENT=1 ;
 
@@ -3004,7 +3004,7 @@ CREATE TABLE IF NOT EXISTS `H_Produto` (
   `peso` decimal(10,0) DEFAULT NULL COMMENT 'Peso do produto.',
   `qtd_caixa` int(11) DEFAULT NULL COMMENT 'Quantidade de unidades do produto por caixa.',
   `dt_inclusao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.',
-  `dt_atualizacao` timestamp NULL DEFAULT NULL COMMENT 'Data de atualização do registro no banco de dados.',
+  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.',
   PRIMARY KEY (`id_h_produto`),
   KEY `fk_h_produtos_produtos1` (`produto_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Tabela de histórico de Produtos.' AUTO_INCREMENT=1 ;
@@ -3048,7 +3048,7 @@ CREATE TABLE IF NOT EXISTS `Pedido` (
   `vl_total` decimal(10,0) DEFAULT NULL COMMENT 'Valor total do pedido. Derivado a partir do preço e da quantidade de cada produto no pedido.',
   `vl_liquido` decimal(10,0) DEFAULT NULL COMMENT 'Valor total do pedido considerando descontos.',
   `dt_inclusao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.',
-  `dt_atualizacao` timestamp NULL DEFAULT NULL COMMENT 'Data de atualização do registro no banco de dados.',
+  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.',
   PRIMARY KEY (`id_pedido`),
   KEY `fk_pedidos_tp_situacoes_pedido1` (`situacao_pedido_id`),
   KEY `fk_pedidos_tp_formas_pagto1` (`forma_pagto_id`),
@@ -3068,7 +3068,7 @@ CREATE TABLE IF NOT EXISTS `Perfil` (
   `nome` varchar(30) NOT NULL COMMENT 'Nome do perfil.',
   `descricao` varchar(100) DEFAULT NULL COMMENT 'Descrição do perfil.',
   `dt_inclusao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.',
-  `dt_atualizacao` timestamp NULL DEFAULT NULL COMMENT 'Data de atualização do registro no banco de dados.',
+  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.',
   PRIMARY KEY (`id_perfil`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Perfis (papeis) dos usuários no sistema.' AUTO_INCREMENT=1 ;
 
@@ -3082,7 +3082,7 @@ CREATE TABLE IF NOT EXISTS `Perfil_Transacao` (
   `transacao_id` int(11) NOT NULL COMMENT 'Número sequencial da transação no banco de dados.',
   `perfil_id` int(11) NOT NULL COMMENT 'Número sequencial do perfil no banco de dados.',
   `dt_inclusao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.',
-  `dt_atualizacao` timestamp NULL DEFAULT NULL COMMENT 'Data de atualização do registro no banco de dados.',
+  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.',
   PRIMARY KEY (`transacao_id`,`perfil_id`),
   KEY `fk_transacoes_has_perfis_perfis1` (`perfil_id`),
   KEY `fk_transacoes_has_perfis_transacoes1` (`transacao_id`)
@@ -3105,7 +3105,7 @@ CREATE TABLE IF NOT EXISTS `Produto` (
   `peso` decimal(10,0) DEFAULT NULL COMMENT 'Peso do produto.',
   `qtd_caixa` int(11) DEFAULT NULL COMMENT 'Quantidade de unidades do produto por caixa.',
   `dt_inclusao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.',
-  `dt_atualizacao` timestamp NULL DEFAULT NULL COMMENT 'Data de atualização do registro no banco de dados.',
+  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.',
   PRIMARY KEY (`id_produto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Produtos tratados pelo Sistema.' AUTO_INCREMENT=1 ;
 
@@ -3139,7 +3139,7 @@ CREATE TABLE IF NOT EXISTS `Produto_Remessa` (
   `quant` int(11) DEFAULT NULL COMMENT 'Quantidade do produto na remessa.',
   `preco` decimal(10,0) DEFAULT NULL COMMENT 'Preço do produto na remessa.',
   `dt_inclusao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.',
-  `dt_atualizacao` timestamp NULL DEFAULT NULL COMMENT 'Data de atualização do registro no banco de dados.',
+  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.',
   PRIMARY KEY (`produto_id`,`remessa_id`),
   KEY `fk_produtos_has_remessas_remessas1` (`remessa_id`),
   KEY `fk_produtos_has_remessas_produtos1` (`produto_id`)
@@ -3154,7 +3154,7 @@ CREATE TABLE IF NOT EXISTS `Produto_Remessa` (
 CREATE TABLE IF NOT EXISTS `Remessa` (
   `id_remessa` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Número sequencial da remessa no banco de dados.',
   `dt_inclusao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.',
-  `dt_atualizacao` timestamp NULL DEFAULT NULL COMMENT 'Data de atualização do registro no banco de dados.',
+  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.',
   PRIMARY KEY (`id_remessa`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Remessas de produtos enviadas da fábrica.' AUTO_INCREMENT=1 ;
 
@@ -3169,7 +3169,7 @@ CREATE TABLE IF NOT EXISTS `Situacao_pedido` (
   `nome` varchar(30) DEFAULT NULL COMMENT 'Nome da situação do pedido.',
   `descricao` varchar(100) DEFAULT NULL COMMENT 'Descrição da situação do pedido.',
   `dt_inclusao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.',
-  `dt_atualizacao` timestamp NULL DEFAULT NULL COMMENT 'Data de atualização do registro no banco de dados.',
+  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.',
   PRIMARY KEY (`id_situacao_pedido`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Situações que o pedido pode assumir:\n1 - Não emitido\n2 - Emi' AUTO_INCREMENT=1 ;
 
@@ -3184,7 +3184,7 @@ CREATE TABLE IF NOT EXISTS `Tp_Pedido` (
   `nome` varchar(30) DEFAULT NULL COMMENT 'Nome do tipo de pedidos.',
   `descricao` varchar(100) DEFAULT NULL COMMENT 'Descrição do tipo de pedidos.',
   `dt_inclusao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.',
-  `dt_atualizacao` timestamp NULL DEFAULT NULL COMMENT 'Data de atualização do registro no banco de dados.',
+  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.',
   PRIMARY KEY (`id_tp_pedido`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Tipos de pedidos:\n1 - Venda\n2 - Consignado\n3 - Bonificação\n4' AUTO_INCREMENT=1 ;
 
@@ -3200,7 +3200,7 @@ CREATE TABLE IF NOT EXISTS `Transacao` (
   `descricao` varchar(100) DEFAULT NULL COMMENT 'Descrição da transação.',
   `url` varchar(200) DEFAULT NULL COMMENT 'URL associada à transação.',
   `dt_inclusao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.',
-  `dt_atualizacao` timestamp NULL DEFAULT NULL COMMENT 'Data de atualização do registro no banco de dados.',
+  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.',
   PRIMARY KEY (`id_transacao`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Transações do sistema para as ações do usuário.' AUTO_INCREMENT=1 ;
 
@@ -3216,7 +3216,7 @@ CREATE TABLE IF NOT EXISTS `Uf` (
   `nome` varchar(20) NOT NULL COMMENT 'Nome da UF',
   `in_habilitacao` varchar(1) DEFAULT NULL,
   `dt_inclusao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.',
-  `dt_atualizacao` timestamp NULL DEFAULT NULL COMMENT 'Indica se o registro está habilitado para uso no sistema: Habilitado (S) ou Não habilitado (N)',
+  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Indica se o registro está habilitado para uso no sistema: Habilitado (S) ou Não habilitado (N)',
   PRIMARY KEY (`id_uf`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Lista de UF do Brasil.' AUTO_INCREMENT=20 ;
 
@@ -3262,7 +3262,7 @@ CREATE TABLE IF NOT EXISTS `Usuario` (
   `cargo` varchar(30) DEFAULT NULL COMMENT 'Cargo do usuário: administrador ou vendedor',
   `in_situacao` varchar(1) DEFAULT NULL COMMENT 'Situação do Usuário: Ativo (S) ou Inativo (N)',
   `dt_inclusao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.',
-  `dt_atualizacao` timestamp NULL DEFAULT NULL COMMENT 'Cargo do usuário: administrador ou vendedor',
+  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Cargo do usuário: administrador ou vendedor',
   PRIMARY KEY (`id_usuario`),
   KEY `fk_usuarios_perfis1` (`perfil_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Usuários com acesso às funcionalidades do sistema. \n' AUTO_INCREMENT=1 ;
