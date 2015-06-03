@@ -1,5 +1,4 @@
-
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (1, 16, 1, 'Abrahão Alab', NULL, '2015-05-22 17:49:19', '2015-05-22 17:57:54'),
 (2, 16, 1, 'Adalberto Aragão', NULL, '2015-05-22 17:49:19', '2015-05-22 17:57:54'),
 (3, 16, 1, 'Aeroporto Velho', NULL, '2015-05-22 17:49:19', '2015-05-22 17:57:54'),
@@ -620,7 +619,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (749, 988, 5, 'Paralela', NULL, '2015-05-22 17:49:23', '2015-05-22 17:57:54'),
 (750, 988, 5, 'Paripe', NULL, '2015-05-22 17:49:23', '2015-05-22 17:57:54'),
 (752, 988, 5, 'Patamares', NULL, '2015-05-22 17:49:23', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (753, 988, 5, 'Pau da Lima', NULL, '2015-05-22 17:49:23', '2015-05-22 17:57:54'),
 (754, 988, 5, 'Pau Miúdo', NULL, '2015-05-22 17:49:23', '2015-05-22 17:57:54'),
 (755, 988, 5, 'Bairro da Paz', NULL, '2015-05-22 17:49:23', '2015-05-22 17:57:54'),
@@ -1221,7 +1220,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (1489, 1847, 8, 'Vila Amélia', NULL, '2015-05-22 17:49:29', '2015-05-22 17:57:54'),
 (1490, 1847, 8, 'Vila Lenira', NULL, '2015-05-22 17:49:29', '2015-05-22 17:57:54'),
 (1491, 1847, 8, 'Vila Nova', NULL, '2015-05-22 17:49:29', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (1492, 1847, 8, 'Vila Real', NULL, '2015-05-22 17:49:29', '2015-05-22 17:57:54'),
 (1493, 1847, 8, 'Vista da Serra', NULL, '2015-05-22 17:49:29', '2015-05-22 17:57:54'),
 (1494, 1879, 8, 'Adalberto Simão Nader', NULL, '2015-05-22 17:49:29', '2015-05-22 17:57:54'),
@@ -1801,7 +1800,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (2133, 2069, 9, 'Setor Fabrício', NULL, '2015-05-22 17:49:36', '2015-05-22 17:57:54'),
 (2134, 2069, 9, 'Setor Garavelo', NULL, '2015-05-22 17:49:36', '2015-05-22 17:57:54'),
 (2135, 2069, 9, 'Setor Marista Sul', NULL, '2015-05-22 17:49:36', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (2136, 2069, 9, 'Setor Morada dos Pássaros', NULL, '2015-05-22 17:49:36', '2015-05-22 17:57:54'),
 (2137, 2069, 9, 'Setor Oeste', NULL, '2015-05-22 17:49:36', '2015-05-22 17:57:54'),
 (2138, 2069, 9, 'Setor Pontal Sul', NULL, '2015-05-22 17:49:36', '2015-05-22 17:57:54'),
@@ -2365,7 +2364,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (2749, 2298, 9, 'Setor Industrial', NULL, '2015-05-22 17:49:41', '2015-05-22 17:57:54'),
 (2750, 2298, 9, 'Setor Morada do Sol', NULL, '2015-05-22 17:49:41', '2015-05-22 17:57:54'),
 (2751, 2298, 9, 'Setor Oeste', NULL, '2015-05-22 17:49:41', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (2752, 2298, 9, 'Setor Pausanes', NULL, '2015-05-22 17:49:41', '2015-05-22 17:57:54'),
 (2753, 2298, 9, 'Setor Santa Luzia', NULL, '2015-05-22 17:49:41', '2015-05-22 17:57:54'),
 (2754, 2298, 9, 'Setor Universitário', NULL, '2015-05-22 17:49:41', '2015-05-22 17:57:54'),
@@ -2953,7 +2952,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (3410, 2754, 11, 'Jonas Veiga', NULL, '2015-05-22 17:49:47', '2015-05-22 17:57:54'),
 (3411, 2754, 11, 'Juliana', NULL, '2015-05-22 17:49:47', '2015-05-22 17:57:54'),
 (3412, 2754, 11, 'Lagoa', NULL, '2015-05-22 17:49:47', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (3413, 2754, 11, 'Lagoinha', NULL, '2015-05-22 17:49:47', '2015-05-22 17:57:54'),
 (3414, 2754, 11, 'Lagoinha (Venda Nova)', NULL, '2015-05-22 17:49:47', '2015-05-22 17:57:54'),
 (3415, 2754, 11, 'Laranjeiras', NULL, '2015-05-22 17:49:47', '2015-05-22 17:57:54'),
@@ -3539,7 +3538,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (4073, 3047, 11, 'Parque Jardim Capitão Silva', NULL, '2015-05-22 17:49:52', '2015-05-22 17:57:54'),
 (4074, 3047, 11, 'Planalto', NULL, '2015-05-22 17:49:52', '2015-05-22 17:57:54'),
 (4075, 3047, 11, 'Ponte Funda', NULL, '2015-05-22 17:49:52', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (4076, 3047, 11, 'Porto Velho', NULL, '2015-05-22 17:49:52', '2015-05-22 17:57:54'),
 (4077, 3047, 11, 'Primavera', NULL, '2015-05-22 17:49:52', '2015-05-22 17:57:54'),
 (4078, 3047, 11, 'Quinta das Palmeiras', NULL, '2015-05-22 17:49:52', '2015-05-22 17:57:54'),
@@ -4130,7 +4129,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (4727, 3448, 11, 'Jardim Primavera', NULL, '2015-05-22 17:49:57', '2015-05-22 17:57:54'),
 (4728, 3448, 11, 'Jardim São Geraldo', NULL, '2015-05-22 17:49:57', '2015-05-22 17:57:54'),
 (4729, 3448, 11, 'Jardim São Luiz', NULL, '2015-05-22 17:49:57', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (4730, 3448, 11, 'João Alves', NULL, '2015-05-22 17:49:57', '2015-05-22 17:57:54'),
 (4731, 3448, 11, 'João Botelho', NULL, '2015-05-22 17:49:57', '2015-05-22 17:57:54'),
 (4732, 3448, 11, 'João Gordo', NULL, '2015-05-22 17:49:57', '2015-05-22 17:57:54'),
@@ -4699,7 +4698,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (5393, 3749, 11, 'Centro', NULL, '2015-05-22 17:50:03', '2015-05-22 17:57:54'),
 (5394, 3749, 11, 'Colorado', NULL, '2015-05-22 17:50:03', '2015-05-22 17:57:54'),
 (5395, 3749, 11, 'Conjunto Cristina (São Benedito)', NULL, '2015-05-22 17:50:03', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (5396, 3749, 11, 'Conjunto Palmital (São Benedito)', NULL, '2015-05-22 17:50:03', '2015-05-22 17:57:54'),
 (5397, 3749, 11, 'Belo Vale', NULL, '2015-05-22 17:50:03', '2015-05-22 17:57:54'),
 (5398, 3749, 11, 'Córrego Frio', NULL, '2015-05-22 17:50:03', '2015-05-22 17:57:54'),
@@ -5272,7 +5271,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (6056, 4066, 11, 'Parque das Américas', NULL, '2015-05-22 17:50:08', '2015-05-22 17:57:54'),
 (6057, 4066, 11, 'Parque Ileana', NULL, '2015-05-22 17:50:08', '2015-05-22 17:57:54'),
 (6058, 4066, 11, 'Parque Mariela', NULL, '2015-05-22 17:50:08', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (6059, 4066, 11, 'Parque Ozanam', NULL, '2015-05-22 17:50:08', '2015-05-22 17:57:54'),
 (6060, 4066, 11, 'Parque Retiro', NULL, '2015-05-22 17:50:08', '2015-05-22 17:57:54'),
 (6061, 4066, 11, 'Parque Rinaldo', NULL, '2015-05-22 17:50:08', '2015-05-22 17:57:54'),
@@ -5842,7 +5841,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (6672, 4534, 14, 'Brasília', NULL, '2015-05-22 17:50:12', '2015-05-22 17:57:54'),
 (6673, 4534, 14, 'Catedral', NULL, '2015-05-22 17:50:12', '2015-05-22 17:57:54'),
 (6674, 4534, 14, 'Centro', NULL, '2015-05-22 17:50:12', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (6675, 4534, 14, 'Fortaleza', NULL, '2015-05-22 17:50:12', '2015-05-22 17:57:54'),
 (6676, 4534, 14, 'Independente', NULL, '2015-05-22 17:50:12', '2015-05-22 17:57:54'),
 (6677, 4534, 14, 'Jardim Independente I', NULL, '2015-05-22 17:50:12', '2015-05-22 17:57:54'),
@@ -6100,7 +6099,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (6946, 4904, 15, 'Catolé', NULL, '2015-05-22 17:50:15', '2015-05-22 17:57:54'),
 (6947, 4904, 15, 'Centenário', NULL, '2015-05-22 17:50:15', '2015-05-22 17:57:54'),
 (6948, 4904, 15, 'Centro', NULL, '2015-05-22 17:50:15', '2015-05-22 17:57:54'),
-(6949, 4904, 15, 'Cidades', NULL, '2015-05-22 17:50:15', '2015-05-22 17:57:54'),
+(6949, 4904, 15, 'cidade', NULL, '2015-05-22 17:50:15', '2015-05-22 17:57:54'),
 (6950, 4904, 15, 'Conceição', NULL, '2015-05-22 17:50:15', '2015-05-22 17:57:54'),
 (6951, 4904, 15, 'Cruzeiro', NULL, '2015-05-22 17:50:15', '2015-05-22 17:57:54'),
 (6952, 4904, 15, 'Distrito Industrial', NULL, '2015-05-22 17:50:15', '2015-05-22 17:57:54'),
@@ -6438,7 +6437,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (7308, 5406, 16, 'Alto José do Pinho', NULL, '2015-05-22 17:50:18', '2015-05-22 17:57:54'),
 (7309, 5406, 16, 'Alto Santa Terezinha', NULL, '2015-05-22 17:50:18', '2015-05-22 17:57:54'),
 (7310, 5406, 16, 'Apipucos', NULL, '2015-05-22 17:50:18', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (7311, 5406, 16, 'Areias', NULL, '2015-05-22 17:50:18', '2015-05-22 17:57:54'),
 (7312, 5406, 16, 'Arruda', NULL, '2015-05-22 17:50:18', '2015-05-22 17:57:54'),
 (7313, 5406, 16, 'Barro', NULL, '2015-05-22 17:50:18', '2015-05-22 17:57:54'),
@@ -7013,7 +7012,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (7969, 5783, 18, 'Parque Industrial I', NULL, '2015-05-22 17:50:24', '2015-05-22 17:57:54'),
 (7970, 5783, 18, 'Parque Industrial II', NULL, '2015-05-22 17:50:24', '2015-05-22 17:57:54'),
 (7971, 5783, 18, 'Parque Industrial III', NULL, '2015-05-22 17:50:24', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (7972, 5783, 18, 'Parque Industrial IV', NULL, '2015-05-22 17:50:24', '2015-05-22 17:57:54'),
 (7973, 5783, 18, 'Parque Industrial V', NULL, '2015-05-22 17:50:24', '2015-05-22 17:57:54'),
 (7974, 5783, 18, 'Parque Industrial VI', NULL, '2015-05-22 17:50:24', '2015-05-22 17:57:54'),
@@ -7577,7 +7576,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (8599, 5964, 18, 'Vila Palmital', NULL, '2015-05-22 17:50:30', '2015-05-22 17:57:54'),
 (8600, 5964, 18, 'Vila Petrópolis', NULL, '2015-05-22 17:50:30', '2015-05-22 17:57:54'),
 (8601, 5964, 18, 'Vila Rosemari Galvão', NULL, '2015-05-22 17:50:30', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (8602, 5964, 18, 'Vila Santa Cândida', NULL, '2015-05-22 17:50:30', '2015-05-22 17:57:54'),
 (8603, 5964, 18, 'Vila Santa Catarina', NULL, '2015-05-22 17:50:30', '2015-05-22 17:57:54'),
 (8604, 5964, 18, 'Vila Santa Clara', NULL, '2015-05-22 17:50:30', '2015-05-22 17:57:54'),
@@ -8149,7 +8148,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (9228, 6268, 18, 'Jardim Neman Sahyun', NULL, '2015-05-22 17:50:36', '2015-05-22 17:57:54'),
 (9229, 6268, 18, 'Jardim Novo Sabará', NULL, '2015-05-22 17:50:36', '2015-05-22 17:57:54'),
 (9231, 6268, 18, 'Jardim Olímpico', NULL, '2015-05-22 17:50:36', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (9232, 6268, 18, 'Jardim Pacaembu', NULL, '2015-05-22 17:50:36', '2015-05-22 17:57:54'),
 (9233, 6268, 18, 'Jardim Palmares', NULL, '2015-05-22 17:50:36', '2015-05-22 17:57:54'),
 (9234, 6268, 18, 'Jardim Palmeiras', NULL, '2015-05-22 17:50:36', '2015-05-22 17:57:54'),
@@ -8719,7 +8718,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (9960, 6445, 18, 'Planta Walde Rosi Galvão', NULL, '2015-05-22 17:50:42', '2015-05-22 17:57:54'),
 (9961, 6445, 18, 'Planta Weissopolis', NULL, '2015-05-22 17:50:42', '2015-05-22 17:57:54'),
 (9962, 6445, 18, 'Prive Bois de Boulogne', NULL, '2015-05-22 17:50:42', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (9963, 6445, 18, 'Vale da Boa Esperança', NULL, '2015-05-22 17:50:42', '2015-05-22 17:57:54'),
 (9964, 6445, 18, 'Vila Alfredo', NULL, '2015-05-22 17:50:42', '2015-05-22 17:57:54'),
 (9965, 6445, 18, 'Vila Amélia', NULL, '2015-05-22 17:50:42', '2015-05-22 17:57:54'),
@@ -9283,7 +9282,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (10592, 6863, 19, 'Santa Lúcia', NULL, '2015-05-22 17:50:48', '2015-05-22 17:57:54'),
 (10593, 6863, 19, 'Santa Maria  I', NULL, '2015-05-22 17:50:48', '2015-05-22 17:57:54'),
 (10594, 6863, 19, 'Santa Maria  II', NULL, '2015-05-22 17:50:48', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (10595, 6863, 19, 'Santa Maria  III', NULL, '2015-05-22 17:50:48', '2015-05-22 17:57:54'),
 (10596, 6863, 19, 'Santa Rita', NULL, '2015-05-22 17:50:48', '2015-05-22 17:57:54'),
 (10597, 6863, 19, 'Santa Rita de Cássia', NULL, '2015-05-22 17:50:48', '2015-05-22 17:57:54'),
@@ -9856,7 +9855,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (11223, 6955, 19, 'Laranjal Santo Antônio', NULL, '2015-05-22 17:50:54', '2015-05-22 17:57:54'),
 (11224, 6955, 19, 'Linda Vista', NULL, '2015-05-22 17:50:54', '2015-05-22 17:57:54'),
 (11225, 6955, 19, 'Luis de Camões', NULL, '2015-05-22 17:50:54', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (11226, 6955, 19, 'Mactube', NULL, '2015-05-22 17:50:54', '2015-05-22 17:57:54'),
 (11227, 6955, 19, 'Madeira', NULL, '2015-05-22 17:50:54', '2015-05-22 17:57:54'),
 (11228, 6955, 19, 'Mantiqueira', NULL, '2015-05-22 17:50:54', '2015-05-22 17:57:54'),
@@ -10437,7 +10436,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (11936, 7031, 19, 'Jardim Europa', NULL, '2015-05-22 17:51:00', '2015-05-22 17:57:54'),
 (11938, 7031, 19, 'Jardim Faturista', NULL, '2015-05-22 17:51:00', '2015-05-22 17:57:54'),
 (11940, 7031, 19, 'Jardim Guanabara', NULL, '2015-05-22 17:51:00', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (11941, 7031, 19, 'Jardim Guandu', NULL, '2015-05-22 17:51:00', '2015-05-22 17:57:54'),
 (11942, 7031, 19, 'Jardim Himalaia', NULL, '2015-05-22 17:51:00', '2015-05-22 17:57:54'),
 (11944, 7031, 19, 'Jardim Laranjeiras', NULL, '2015-05-22 17:51:00', '2015-05-22 17:57:54'),
@@ -11023,7 +11022,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (12585, 7102, 19, 'Pessegueiros', NULL, '2015-05-22 17:51:07', '2015-05-22 17:57:54'),
 (12586, 7102, 19, 'Pedra da Vargem Grande', NULL, '2015-05-22 17:51:07', '2015-05-22 17:57:54'),
 (12587, 7102, 19, 'Pimenteiras', NULL, '2015-05-22 17:51:07', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (12588, 7102, 19, 'Ponte Nova', NULL, '2015-05-22 17:51:07', '2015-05-22 17:57:54'),
 (12589, 7102, 19, 'Posse', NULL, '2015-05-22 17:51:07', '2015-05-22 17:57:54'),
 (12590, 7102, 19, 'Prata', NULL, '2015-05-22 17:51:07', '2015-05-22 17:57:54'),
@@ -11611,7 +11610,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (13214, 7632, 23, 'Vila Arco Iris', NULL, '2015-05-22 17:51:14', '2015-05-22 17:57:54'),
 (13215, 7632, 23, 'Vila Azambuja', NULL, '2015-05-22 17:51:14', '2015-05-22 17:57:54'),
 (13216, 7632, 23, 'Vila Braz Caino', NULL, '2015-05-22 17:51:14', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (13217, 7632, 23, 'Vila Brenner', NULL, '2015-05-22 17:51:14', '2015-05-22 17:57:54'),
 (13218, 7632, 23, 'Vila Conceição', NULL, '2015-05-22 17:51:14', '2015-05-22 17:57:54'),
 (13219, 7632, 23, 'Vila Dirceu', NULL, '2015-05-22 17:51:14', '2015-05-22 17:57:54'),
@@ -12193,7 +12192,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (13802, 8377, 24, 'Passo Manso', NULL, '2015-05-22 17:51:20', '2015-05-22 17:57:54'),
 (13803, 8377, 24, 'Petrópolis', NULL, '2015-05-22 17:51:20', '2015-05-22 17:57:54'),
 (13804, 8377, 24, 'Ponta Aguda', NULL, '2015-05-22 17:51:20', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (13805, 8377, 24, 'Progresso', NULL, '2015-05-22 17:51:20', '2015-05-22 17:57:54'),
 (13806, 8377, 24, 'Ribeirão Fresco', NULL, '2015-05-22 17:51:20', '2015-05-22 17:57:54'),
 (13807, 8377, 24, 'Salto', NULL, '2015-05-22 17:51:20', '2015-05-22 17:57:54'),
@@ -12773,7 +12772,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (14409, 8886, 26, 'Jardim Moreirinha', NULL, '2015-05-22 17:51:42', '2015-05-22 17:57:54'),
 (14411, 8886, 26, 'Jardim Nova Era', NULL, '2015-05-22 17:51:42', '2015-05-22 17:57:54'),
 (14412, 8886, 26, 'Jardim Novo Amparo', NULL, '2015-05-22 17:51:42', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (14413, 8886, 26, 'Loteamento Panorama Tropical', NULL, '2015-05-22 17:51:42', '2015-05-22 17:57:54'),
 (14414, 8886, 26, 'Jardim Primavera', NULL, '2015-05-22 17:51:42', '2015-05-22 17:57:54'),
 (14415, 8886, 26, 'Jardim Real', NULL, '2015-05-22 17:51:42', '2015-05-22 17:57:54'),
@@ -13319,7 +13318,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (15079, 8928, 26, 'Nova Gardênia', NULL, '2015-05-22 17:51:47', '2015-05-22 17:57:54'),
 (15080, 8928, 26, 'Panorama Parque Residencial', NULL, '2015-05-22 17:51:47', '2015-05-22 17:57:54'),
 (15088, 8928, 26, 'Parque das Nações', NULL, '2015-05-22 17:51:47', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (15090, 8928, 26, 'Parque dos Coqueiros', NULL, '2015-05-22 17:51:47', '2015-05-22 17:57:54'),
 (15091, 8928, 26, 'Parque Fernão Dias', NULL, '2015-05-22 17:51:47', '2015-05-22 17:57:54'),
 (15096, 8928, 26, 'Parque Residencial Itaguaçu', NULL, '2015-05-22 17:51:47', '2015-05-22 17:57:54'),
@@ -13871,7 +13870,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (15747, 8961, 26, 'Vila Santa Terezinha', NULL, '2015-05-22 17:51:53', '2015-05-22 17:57:54'),
 (15748, 8961, 26, 'Vila Santista', NULL, '2015-05-22 17:51:53', '2015-05-22 17:57:54'),
 (15749, 8961, 26, 'Vila Santo Antônio', NULL, '2015-05-22 17:51:53', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (15750, 8961, 26, 'Vila São Francisco', NULL, '2015-05-22 17:51:53', '2015-05-22 17:57:54'),
 (15752, 8961, 26, 'Vila São João da Boa Vista', NULL, '2015-05-22 17:51:53', '2015-05-22 17:57:54'),
 (15753, 8961, 26, 'Vila São João do Ipiranga', NULL, '2015-05-22 17:51:53', '2015-05-22 17:57:54'),
@@ -14415,7 +14414,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (16525, 9025, 26, 'Jardim Profilurb', NULL, '2015-05-22 17:51:59', '2015-05-22 17:57:54'),
 (16526, 9025, 26, 'Jardim Quarto Centenário', NULL, '2015-05-22 17:51:59', '2015-05-22 17:57:54'),
 (16527, 9025, 26, 'Jardim Regina', NULL, '2015-05-22 17:51:59', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (16528, 9025, 26, 'Jardim Rosana (Sousas)', NULL, '2015-05-22 17:51:59', '2015-05-22 17:57:54'),
 (16529, 9025, 26, 'Jardim Roseira', NULL, '2015-05-22 17:51:59', '2015-05-22 17:57:54'),
 (16530, 9025, 26, 'Jardim Rossin', NULL, '2015-05-22 17:51:59', '2015-05-22 17:57:54'),
@@ -14963,7 +14962,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (17173, 9052, 26, 'Jardim Glória', NULL, '2015-05-22 17:52:05', '2015-05-22 17:57:54'),
 (17174, 9052, 26, 'Jardim Glória II', NULL, '2015-05-22 17:52:05', '2015-05-22 17:57:54'),
 (17175, 9052, 26, 'Jardim Imperial', NULL, '2015-05-22 17:52:05', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (17176, 9052, 26, 'Jardim Ipanema', NULL, '2015-05-22 17:52:05', '2015-05-22 17:57:54'),
 (17177, 9052, 26, 'Jardim Irradiação', NULL, '2015-05-22 17:52:05', '2015-05-22 17:57:54'),
 (17178, 9052, 26, 'Jardim Monte Líbano', NULL, '2015-05-22 17:52:05', '2015-05-22 17:57:54'),
@@ -15517,7 +15516,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (17769, 9138, 26, 'Cidade Kemel', NULL, '2015-05-22 17:52:11', '2015-05-22 17:57:54'),
 (17770, 9138, 26, 'Conjunto Residencial Bandeirantes', NULL, '2015-05-22 17:52:11', '2015-05-22 17:57:54'),
 (17771, 9138, 26, 'Conjunto Residencial José Chacon Moriel', NULL, '2015-05-22 17:52:11', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (17772, 9138, 26, 'Conjunto Residencial Presidente Castello Branco', NULL, '2015-05-22 17:52:11', '2015-05-22 17:57:54'),
 (17773, 9138, 26, 'Conjunto Residencial Santa Teresa', NULL, '2015-05-22 17:52:11', '2015-05-22 17:57:54'),
 (17775, 9138, 26, 'Jardim Alexandre', NULL, '2015-05-22 17:52:11', '2015-05-22 17:57:54'),
@@ -16071,7 +16070,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (18521, 9182, 26, 'Vila Júlia', NULL, '2015-05-22 17:52:16', '2015-05-22 17:57:54'),
 (18522, 9182, 26, 'Vila Ligya', NULL, '2015-05-22 17:52:16', '2015-05-22 17:57:54'),
 (18523, 9182, 26, 'Vila Luis Antônio', NULL, '2015-05-22 17:52:16', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (18524, 9182, 26, 'Vila Maia', NULL, '2015-05-22 17:52:16', '2015-05-22 17:57:54'),
 (18525, 9182, 26, 'Vila Outeiro', NULL, '2015-05-22 17:52:16', '2015-05-22 17:57:54'),
 (18526, 9182, 26, 'Vila Rosalina', NULL, '2015-05-22 17:52:16', '2015-05-22 17:57:54'),
@@ -16627,7 +16626,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (19136, 9216, 26, 'Vale do Sol', NULL, '2015-05-22 17:52:21', '2015-05-22 17:57:54'),
 (19137, 9216, 26, 'Vila Almeida', NULL, '2015-05-22 17:52:21', '2015-05-22 17:57:54'),
 (19139, 9216, 26, 'Vila Areal', NULL, '2015-05-22 17:52:21', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (19140, 9216, 26, 'Vila Aurora', NULL, '2015-05-22 17:52:21', '2015-05-22 17:57:54'),
 (19141, 9216, 26, 'Vila Avaí', NULL, '2015-05-22 17:52:21', '2015-05-22 17:57:54'),
 (19144, 9216, 26, 'Vila Brizzola', NULL, '2015-05-22 17:52:21', '2015-05-22 17:57:54'),
@@ -17187,7 +17186,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (19726, 9250, 26, 'Parque Residencial Scaffibi II', NULL, '2015-05-22 17:52:27', '2015-05-22 17:57:54'),
 (19727, 9250, 26, 'Parque Residencial Souza Campos', NULL, '2015-05-22 17:52:27', '2015-05-22 17:57:54'),
 (19728, 9250, 26, 'Parque São Pedro', NULL, '2015-05-22 17:52:27', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (19729, 9250, 26, 'Parque Viviane', NULL, '2015-05-22 17:52:27', '2015-05-22 17:57:54'),
 (19730, 9250, 26, 'Pedreira', NULL, '2015-05-22 17:52:27', '2015-05-22 17:57:54'),
 (19731, 9250, 26, 'Perobal', NULL, '2015-05-22 17:52:27', '2015-05-22 17:57:54'),
@@ -17740,7 +17739,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (20427, 9285, 26, 'Vila Santa Maria', NULL, '2015-05-22 17:52:33', '2015-05-22 17:57:54'),
 (20428, 9285, 26, 'Vila Santa Terezinha', NULL, '2015-05-22 17:52:33', '2015-05-22 17:57:54'),
 (20429, 9285, 26, 'Vila Santo Ivo', NULL, '2015-05-22 17:52:33', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (20430, 9285, 26, 'Vila São Judas Tadeu', NULL, '2015-05-22 17:52:33', '2015-05-22 17:57:54'),
 (20431, 9285, 26, 'Vila Vicente', NULL, '2015-05-22 17:52:33', '2015-05-22 17:57:54'),
 (20432, 9285, 26, '1ª Zona Industrial', NULL, '2015-05-22 17:52:33', '2015-05-22 17:57:54'),
@@ -18292,7 +18291,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (21124, 9319, 26, 'Jardim Leoni', NULL, '2015-05-22 17:52:40', '2015-05-22 17:57:54'),
 (21125, 9319, 26, 'Jardim Linense', NULL, '2015-05-22 17:52:40', '2015-05-22 17:57:54'),
 (21126, 9319, 26, 'Jardim Marabá', NULL, '2015-05-22 17:52:40', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (21127, 9319, 26, 'Jardim Paraíso', NULL, '2015-05-22 17:52:40', '2015-05-22 17:57:54'),
 (21128, 9319, 26, 'Jardim Pinheiro', NULL, '2015-05-22 17:52:40', '2015-05-22 17:57:54'),
 (21129, 9319, 26, 'Jardim Primavera', NULL, '2015-05-22 17:52:40', '2015-05-22 17:57:54'),
@@ -18844,7 +18843,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (21748, 9369, 26, 'Mogi Moderno', NULL, '2015-05-22 17:52:46', '2015-05-22 17:57:54'),
 (21749, 9369, 26, 'Vila Mogilar', NULL, '2015-05-22 17:52:46', '2015-05-22 17:57:54'),
 (21750, 9369, 26, 'Vila Nancy', NULL, '2015-05-22 17:52:46', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (21751, 9369, 26, 'Vila Natal', NULL, '2015-05-22 17:52:46', '2015-05-22 17:57:54'),
 (21752, 9369, 26, 'Vila Nova Aparecida', NULL, '2015-05-22 17:52:46', '2015-05-22 17:57:54'),
 (21753, 9369, 26, 'Vila Nova Cintra', NULL, '2015-05-22 17:52:46', '2015-05-22 17:57:54'),
@@ -19402,7 +19401,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (22647, 9493, 26, 'Vila Boyes', NULL, '2015-05-22 17:52:52', '2015-05-22 17:57:54'),
 (22648, 9493, 26, 'Vila Cristina', NULL, '2015-05-22 17:52:52', '2015-05-22 17:57:54'),
 (22649, 9493, 26, 'Vila Independência', NULL, '2015-05-22 17:52:52', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (22650, 9493, 26, 'Vila Industrial', NULL, '2015-05-22 17:52:52', '2015-05-22 17:57:54'),
 (22652, 9493, 26, 'Vila Monteiro', NULL, '2015-05-22 17:52:52', '2015-05-22 17:57:54'),
 (22653, 9493, 26, 'Vila Nossa Senhora Aparecida', NULL, '2015-05-22 17:52:52', '2015-05-22 17:57:54'),
@@ -19959,7 +19958,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (23428, 9560, 26, 'Vila Tamandaré', NULL, '2015-05-22 17:52:57', '2015-05-22 17:57:54'),
 (23429, 9560, 26, 'Vila Tibério', NULL, '2015-05-22 17:52:57', '2015-05-22 17:57:54'),
 (23430, 9560, 26, 'Vila Virgínia', NULL, '2015-05-22 17:52:57', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (23431, 9566, 26, 'Alto do Santana', NULL, '2015-05-22 17:52:57', '2015-05-22 17:57:54'),
 (23432, 9566, 26, 'Batovi', NULL, '2015-05-22 17:52:57', '2015-05-22 17:57:54'),
 (23434, 9566, 26, 'Centro', NULL, '2015-05-22 17:52:57', '2015-05-22 17:57:54'),
@@ -20516,7 +20515,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (24056, 9640, 26, 'Conjunto Residencial das Tulipas', NULL, '2015-05-22 17:53:03', '2015-05-22 17:57:54'),
 (24057, 9640, 26, 'Conjunto Residencial das Violetas', NULL, '2015-05-22 17:53:03', '2015-05-22 17:57:54'),
 (24058, 9640, 26, 'Conjunto Residencial Embaré', NULL, '2015-05-22 17:53:03', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (24059, 9640, 26, 'Conjunto Residencial Enseada', NULL, '2015-05-22 17:53:03', '2015-05-22 17:57:54'),
 (24060, 9640, 26, 'Conjunto Residencial Everest', NULL, '2015-05-22 17:53:03', '2015-05-22 17:57:54'),
 (24061, 9640, 26, 'Conjunto Residencial Freitas', NULL, '2015-05-22 17:53:03', '2015-05-22 17:57:54'),
@@ -21075,7 +21074,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (24745, 9659, 26, 'Jardim Bordon', NULL, '2015-05-22 17:53:10', '2015-05-22 17:57:54'),
 (24747, 9659, 26, 'Jardim Canaã', NULL, '2015-05-22 17:53:10', '2015-05-22 17:57:54'),
 (24748, 9659, 26, 'Jardim Caparroz', NULL, '2015-05-22 17:53:10', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (24749, 9659, 26, 'Jardim Castelinho', NULL, '2015-05-22 17:53:10', '2015-05-22 17:57:54'),
 (24751, 9659, 26, 'Jardim Conceição', NULL, '2015-05-22 17:53:10', '2015-05-22 17:57:54'),
 (24752, 9659, 26, 'Jardim Congonhas', NULL, '2015-05-22 17:53:10', '2015-05-22 17:57:54'),
@@ -21622,7 +21621,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (25502, 9668, 26, 'Jardim América da Penha', NULL, '2015-05-22 17:53:16', '2015-05-22 17:57:54'),
 (25503, 9668, 26, 'Jardim Ampliação', NULL, '2015-05-22 17:53:16', '2015-05-22 17:57:54'),
 (25504, 9668, 26, 'Jardim Ana Lúcia', NULL, '2015-05-22 17:53:16', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (25505, 9668, 26, 'Jardim Ana Maria', NULL, '2015-05-22 17:53:16', '2015-05-22 17:57:54'),
 (25506, 9668, 26, 'Jardim Ana Rosa', NULL, '2015-05-22 17:53:16', '2015-05-22 17:57:54'),
 (25507, 9668, 26, 'Jardim Anália Franco', NULL, '2015-05-22 17:53:16', '2015-05-22 17:57:54'),
@@ -22183,7 +22182,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (26076, 9668, 26, 'Jardim Rosider', NULL, '2015-05-22 17:53:21', '2015-05-22 17:57:54'),
 (26077, 9668, 26, 'Jardim Rosina', NULL, '2015-05-22 17:53:21', '2015-05-22 17:57:54'),
 (26078, 9668, 26, 'Jardim Rossin', NULL, '2015-05-22 17:53:21', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (26079, 9668, 26, 'Jardim Rubilene', NULL, '2015-05-22 17:53:21', '2015-05-22 17:57:54'),
 (26080, 9668, 26, 'Jardim Rubio', NULL, '2015-05-22 17:53:21', '2015-05-22 17:57:54'),
 (26081, 9668, 26, 'Jardim Russo', NULL, '2015-05-22 17:53:21', '2015-05-22 17:57:54'),
@@ -22744,7 +22743,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (26647, 9668, 26, 'Vila Carmosina', NULL, '2015-05-22 17:53:25', '2015-05-22 17:57:54'),
 (26648, 9668, 26, 'Vila Carolina', NULL, '2015-05-22 17:53:25', '2015-05-22 17:57:54'),
 (26649, 9668, 26, 'Vila Carrão', NULL, '2015-05-22 17:53:25', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (26650, 9668, 26, 'Vila Castelo', NULL, '2015-05-22 17:53:25', '2015-05-22 17:57:54'),
 (26651, 9668, 26, 'Vila Castro', NULL, '2015-05-22 17:53:26', '2015-05-22 17:57:54'),
 (26652, 9668, 26, 'Vila Catupia', NULL, '2015-05-22 17:53:26', '2015-05-22 17:57:54'),
@@ -23312,7 +23311,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (27246, 9686, 26, 'Jardim Primeiro de Maio', NULL, '2015-05-22 17:53:32', '2015-05-22 17:57:54'),
 (27247, 9686, 26, 'Jardim Recreio', NULL, '2015-05-22 17:53:32', '2015-05-22 17:57:54'),
 (27248, 9686, 26, 'Jardim Recreio dos Bandeirantes', NULL, '2015-05-22 17:53:32', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (27249, 9686, 26, 'Jardim Santa Paula', NULL, '2015-05-22 17:53:32', '2015-05-22 17:57:54'),
 (27250, 9686, 26, 'Jardim São José', NULL, '2015-05-22 17:53:32', '2015-05-22 17:57:54'),
 (27251, 9686, 26, 'Jardim São Sebastião', NULL, '2015-05-22 17:53:32', '2015-05-22 17:57:54'),
@@ -23855,7 +23854,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (28102, 9703, 26, 'Recreio Sertãozinho', NULL, '2015-05-22 17:53:37', '2015-05-22 17:57:54'),
 (28103, 9703, 26, 'Rincão das Lendas', NULL, '2015-05-22 17:53:37', '2015-05-22 17:57:54'),
 (28104, 9703, 26, 'Rio Abaixo', NULL, '2015-05-22 17:53:37', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (28105, 9703, 26, 'Sesc', NULL, '2015-05-22 17:53:37', '2015-05-22 17:57:54'),
 (28106, 9703, 26, 'Sítio São José', NULL, '2015-05-22 17:53:37', '2015-05-22 17:57:54'),
 (28108, 9703, 26, 'Taba Marajoara', NULL, '2015-05-22 17:53:37', '2015-05-22 17:57:54'),
@@ -24411,7 +24410,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (28843, 9788, 26, 'Jardim Ana Claudia', NULL, '2015-05-22 17:53:43', '2015-05-22 17:57:54'),
 (28844, 9788, 26, 'Jardim Antônio Cassillo', NULL, '2015-05-22 17:53:43', '2015-05-22 17:57:54'),
 (28845, 9788, 26, 'Jardim Antônio Rodrigues e Rodrigues', NULL, '2015-05-22 17:53:43', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (28846, 9788, 26, 'Jardim Araújo', NULL, '2015-05-22 17:53:43', '2015-05-22 17:57:54'),
 (28847, 9788, 26, 'Jardim Archila', NULL, '2015-05-22 17:53:43', '2015-05-22 17:57:54'),
 (28848, 9788, 26, 'Jardim Bertioga', NULL, '2015-05-22 17:53:43', '2015-05-22 17:57:54'),
@@ -24962,7 +24961,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (29501, 9622, 26, 'Parque Mirante de Parnaíba', NULL, '2015-05-22 17:53:49', '2015-05-22 17:57:54'),
 (29502, 9622, 26, 'Parque Santana', NULL, '2015-05-22 17:53:49', '2015-05-22 17:57:54'),
 (29503, 9622, 26, 'Jardim Rancho Alegre', NULL, '2015-05-22 17:53:49', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (29504, 9622, 26, 'Tarumã', NULL, '2015-05-22 17:53:49', '2015-05-22 17:57:54'),
 (29505, 9622, 26, 'Chácaras Clarice', NULL, '2015-05-22 17:53:49', '2015-05-22 17:57:54'),
 (29506, 9622, 26, 'Chácaras Maria Inês', NULL, '2015-05-22 17:53:49', '2015-05-22 17:57:54'),
@@ -25522,7 +25521,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (30435, 6656, 18, 'Colônia Zacarias', NULL, '2015-05-22 17:54:22', '2015-05-22 17:57:54'),
 (30436, 2483, 10, 'Centro', NULL, '2015-05-22 17:54:22', '2015-05-22 17:57:54'),
 (30437, 2484, 10, 'Centro', NULL, '2015-05-22 17:54:22', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (30438, 2486, 10, 'Centro', NULL, '2015-05-22 17:54:22', '2015-05-22 17:57:54'),
 (30439, 2487, 10, 'Centro', NULL, '2015-05-22 17:54:22', '2015-05-22 17:57:54'),
 (30440, 2489, 10, 'Centro', NULL, '2015-05-22 17:54:22', '2015-05-22 17:57:54'),
@@ -26083,7 +26082,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (31047, 6962, 19, 'Imboassica', NULL, '2015-05-22 17:54:28', '2015-05-22 17:57:54'),
 (31048, 4511, 13, 'Cohab Dom Orlando Chaves', NULL, '2015-05-22 17:54:28', '2015-05-22 17:57:54'),
 (31049, 4511, 13, 'Cohab Dom Bosco', NULL, '2015-05-22 17:54:28', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (31050, 4511, 13, 'Cohab Jaime Campos', NULL, '2015-05-22 17:54:28', '2015-05-22 17:57:54'),
 (31051, 4511, 13, 'Hélio Ponce de Arruda', NULL, '2015-05-22 17:54:28', '2015-05-22 17:57:54'),
 (31052, 4511, 13, 'Alto da Boa Vista', NULL, '2015-05-22 17:54:28', '2015-05-22 17:57:54'),
@@ -26692,7 +26691,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (31693, 9210, 26, 'Barra do Ribeira', NULL, '2015-05-22 17:54:35', '2015-05-22 17:57:54'),
 (31694, 9210, 26, 'Rócio', NULL, '2015-05-22 17:54:35', '2015-05-22 17:57:54'),
 (31695, 9211, 26, 'Centro', NULL, '2015-05-22 17:54:35', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (31696, 9211, 26, 'Pedrinhas', NULL, '2015-05-22 17:54:35', '2015-05-22 17:57:54'),
 (31697, 8090, 23, 'Centro', NULL, '2015-05-22 17:54:35', '2015-05-22 17:57:54'),
 (31698, 9237, 26, 'Belas Artes', NULL, '2015-05-22 17:54:35', '2015-05-22 17:57:54'),
@@ -27276,7 +27275,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (32327, 3632, 11, 'Campo de Santa Maria', NULL, '2015-05-22 17:54:41', '2015-05-22 17:57:54'),
 (32329, 3632, 11, 'Chácara Santa Terezinha', NULL, '2015-05-22 17:54:41', '2015-05-22 17:57:54'),
 (32330, 3632, 11, 'Colinas', NULL, '2015-05-22 17:54:41', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (32331, 3632, 11, 'Jardim das Acácias', NULL, '2015-05-22 17:54:41', '2015-05-22 17:57:54'),
 (32332, 3632, 11, 'Jardim Elvira Dias', NULL, '2015-05-22 17:54:41', '2015-05-22 17:57:54'),
 (32333, 3632, 11, 'Jardim Europa', NULL, '2015-05-22 17:54:41', '2015-05-22 17:57:54'),
@@ -27874,7 +27873,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (32944, 9858, 27, 'Setor Central', NULL, '2015-05-22 17:54:47', '2015-05-22 17:57:54'),
 (32945, 9859, 27, 'Setor Central', NULL, '2015-05-22 17:54:47', '2015-05-22 17:57:54'),
 (32946, 9860, 27, 'Setor Central', NULL, '2015-05-22 17:54:47', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (32947, 9861, 27, 'Setor Central', NULL, '2015-05-22 17:54:47', '2015-05-22 17:57:54'),
 (32948, 9865, 27, 'Setor Central', NULL, '2015-05-22 17:54:47', '2015-05-22 17:57:54'),
 (32949, 9866, 27, 'Setor Central', NULL, '2015-05-22 17:54:47', '2015-05-22 17:57:54'),
@@ -28453,7 +28452,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (33586, 9025, 26, 'Jardim Santa Genebra II (Barão Geraldo)', NULL, '2015-05-22 17:54:52', '2015-05-22 17:57:54'),
 (33587, 9260, 26, 'Jardim Santa Laura', NULL, '2015-05-22 17:54:52', '2015-05-22 17:57:54'),
 (33588, 9260, 26, 'Fazenda da Mata', NULL, '2015-05-22 17:54:53', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (33589, 9260, 26, 'Chácaras Berro D''Água', NULL, '2015-05-22 17:54:53', '2015-05-22 17:57:54'),
 (33591, 9025, 26, 'Jardim Rosália II', NULL, '2015-05-22 17:54:53', '2015-05-22 17:57:54'),
 (33594, 8883, 26, 'Jardim Nielsen Ville', NULL, '2015-05-22 17:54:53', '2015-05-22 17:57:54'),
@@ -29050,7 +29049,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (34224, 3363, 11, 'Centro', NULL, '2015-05-22 17:54:59', '2015-05-22 17:57:54'),
 (34225, 2675, 11, 'Centro', NULL, '2015-05-22 17:54:59', '2015-05-22 17:57:54'),
 (34226, 9240, 26, 'Vila La Brunetti', NULL, '2015-05-22 17:54:59', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (34227, 3190, 11, 'Centro', NULL, '2015-05-22 17:54:59', '2015-05-22 17:57:54'),
 (34228, 3924, 11, 'Centro', NULL, '2015-05-22 17:54:59', '2015-05-22 17:57:54'),
 (34229, 3146, 11, 'Centro', NULL, '2015-05-22 17:54:59', '2015-05-22 17:57:54'),
@@ -29640,7 +29639,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (34845, 8451, 24, 'Centro', NULL, '2015-05-22 17:55:05', '2015-05-22 17:57:54'),
 (34846, 256, 3, 'Lady Laura', NULL, '2015-05-22 17:55:05', '2015-05-22 17:57:54'),
 (34847, 256, 3, 'Distrito Industrial', NULL, '2015-05-22 17:55:05', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (34848, 8453, 24, 'Centro', NULL, '2015-05-22 17:55:05', '2015-05-22 17:57:54'),
 (34849, 8458, 24, 'Centro', NULL, '2015-05-22 17:55:05', '2015-05-22 17:57:54'),
 (34850, 8475, 24, 'Centro', NULL, '2015-05-22 17:55:05', '2015-05-22 17:57:54'),
@@ -30240,7 +30239,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (35556, 8859, 26, 'Centro', NULL, '2015-05-22 17:55:11', '2015-05-22 17:57:54'),
 (35557, 8923, 26, 'Vila Queiroz', NULL, '2015-05-22 17:55:11', '2015-05-22 17:57:54'),
 (35558, 9079, 26, 'Centro', NULL, '2015-05-22 17:55:11', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (35559, 9110, 26, 'Centro', NULL, '2015-05-22 17:55:11', '2015-05-22 17:57:54'),
 (35560, 9209, 26, 'Centro', NULL, '2015-05-22 17:55:11', '2015-05-22 17:57:54'),
 (35561, 9261, 26, 'Centro', NULL, '2015-05-22 17:55:11', '2015-05-22 17:57:54'),
@@ -30855,7 +30854,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (36188, 7390, 23, 'Centro', NULL, '2015-05-22 17:55:17', '2015-05-22 17:57:54'),
 (36189, 8602, 24, 'Centro', NULL, '2015-05-22 17:55:17', '2015-05-22 17:57:54'),
 (36190, 8367, 24, 'Centro', NULL, '2015-05-22 17:55:17', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (36191, 8514, 24, 'Centro', NULL, '2015-05-22 17:55:17', '2015-05-22 17:57:54'),
 (36192, 8350, 24, 'Centro', NULL, '2015-05-22 17:55:17', '2015-05-22 17:57:54'),
 (36193, 8321, 24, 'Centro', NULL, '2015-05-22 17:55:17', '2015-05-22 17:57:54'),
@@ -31463,7 +31462,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (36811, 7527, 23, 'Centro', NULL, '2015-05-22 17:55:23', '2015-05-22 17:57:54'),
 (36812, 7861, 23, 'Centro', NULL, '2015-05-22 17:55:23', '2015-05-22 17:57:54'),
 (36813, 7742, 23, 'Maracanã', NULL, '2015-05-22 17:55:23', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (36814, 7744, 23, 'Araripe', NULL, '2015-05-22 17:55:23', '2015-05-22 17:57:54'),
 (36815, 7744, 23, 'Marcondes', NULL, '2015-05-22 17:55:23', '2015-05-22 17:57:54'),
 (36816, 7744, 23, 'Serra Grande Alemã', NULL, '2015-05-22 17:55:23', '2015-05-22 17:57:54'),
@@ -32073,7 +32072,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (37445, 7501, 23, 'Povoado Piquiri', NULL, '2015-05-22 17:55:29', '2015-05-22 17:57:54'),
 (37446, 7391, 23, 'Centro', NULL, '2015-05-22 17:55:29', '2015-05-22 17:57:54'),
 (37447, 7540, 23, 'Centro', NULL, '2015-05-22 17:55:29', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (37448, 7695, 23, 'Centro', NULL, '2015-05-22 17:55:29', '2015-05-22 17:57:54'),
 (37449, 8295, 23, 'Centro', NULL, '2015-05-22 17:55:29', '2015-05-22 17:57:54'),
 (37450, 7831, 23, 'Centro', NULL, '2015-05-22 17:55:29', '2015-05-22 17:57:54'),
@@ -32667,7 +32666,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (38072, 8594, 24, 'Centro', NULL, '2015-05-22 17:55:35', '2015-05-22 17:57:54'),
 (38073, 8623, 24, 'Centro', NULL, '2015-05-22 17:55:35', '2015-05-22 17:57:54'),
 (38074, 8648, 24, 'Centro', NULL, '2015-05-22 17:55:35', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (38075, 8655, 24, 'Centro', NULL, '2015-05-22 17:55:35', '2015-05-22 17:57:54'),
 (38076, 8684, 24, 'Centro', NULL, '2015-05-22 17:55:35', '2015-05-22 17:57:54'),
 (38077, 8692, 24, 'Centro', NULL, '2015-05-22 17:55:35', '2015-05-22 17:57:54'),
@@ -33282,7 +33281,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (38707, 5331, 16, 'Povoado de Ribeiro do Mel', NULL, '2015-05-22 17:55:41', '2015-05-22 17:57:54'),
 (38708, 5331, 16, 'Povoado de Lagoa Comprida', NULL, '2015-05-22 17:55:41', '2015-05-22 17:57:54'),
 (38709, 5331, 16, 'Povoado de Gameleira', NULL, '2015-05-22 17:55:41', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (38710, 5244, 16, 'Distrito de Caatinga Grande', NULL, '2015-05-22 17:55:41', '2015-05-22 17:57:54'),
 (38711, 5244, 16, 'Distrito de Lagoas', NULL, '2015-05-22 17:55:41', '2015-05-22 17:57:54'),
 (38712, 5244, 16, 'Distrito de Lagoa de Fora', NULL, '2015-05-22 17:55:41', '2015-05-22 17:57:54'),
@@ -33904,7 +33903,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (39347, 5631, 17, 'Centro', NULL, '2015-05-22 17:55:47', '2015-05-22 17:57:54'),
 (39348, 5632, 17, 'Centro', NULL, '2015-05-22 17:55:47', '2015-05-22 17:57:54'),
 (39349, 5633, 17, 'Centro', NULL, '2015-05-22 17:55:47', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (39350, 5634, 17, 'Centro', NULL, '2015-05-22 17:55:47', '2015-05-22 17:57:54'),
 (39351, 5635, 17, 'Centro', NULL, '2015-05-22 17:55:47', '2015-05-22 17:57:54'),
 (39352, 5636, 17, 'Centro', NULL, '2015-05-22 17:55:47', '2015-05-22 17:57:54'),
@@ -34511,7 +34510,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (40652, 4581, 14, 'Centro', NULL, '2015-05-22 17:55:53', '2015-05-22 17:57:54'),
 (40653, 5722, 17, 'David Caldas', NULL, '2015-05-22 17:55:53', '2015-05-22 17:57:54'),
 (40654, 8406, 24, 'Centro', NULL, '2015-05-22 17:55:53', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (40655, 8642, 24, 'Centro', NULL, '2015-05-22 17:55:53', '2015-05-22 17:57:54'),
 (40656, 8342, 24, 'Nova Estrela', NULL, '2015-05-22 17:55:53', '2015-05-22 17:57:54'),
 (40657, 4921, 15, 'Centro', NULL, '2015-05-22 17:55:53', '2015-05-22 17:57:54'),
@@ -35136,7 +35135,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (41278, 3519, 11, 'Centro', NULL, '2015-05-22 17:55:58', '2015-05-22 17:57:54'),
 (41279, 3522, 11, 'Centro', NULL, '2015-05-22 17:55:58', '2015-05-22 17:57:54'),
 (41280, 4906, 15, 'Centro', NULL, '2015-05-22 17:55:58', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (41281, 4884, 15, 'Centro', NULL, '2015-05-22 17:55:58', '2015-05-22 17:57:54'),
 (41282, 4893, 15, 'Centro', NULL, '2015-05-22 17:55:58', '2015-05-22 17:57:54'),
 (41283, 3525, 11, 'Centro', NULL, '2015-05-22 17:55:58', '2015-05-22 17:57:54'),
@@ -35736,7 +35735,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (41901, 2065, 9, 'Residencial Monte Sinai', NULL, '2015-05-22 17:56:03', '2015-05-22 17:57:54'),
 (41902, 3860, 11, 'Pontões', NULL, '2015-05-22 17:56:03', '2015-05-22 17:57:54'),
 (41903, 2896, 11, 'Santo Antônio da Serra', NULL, '2015-05-22 17:56:03', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (41904, 4049, 11, 'São Pedro', NULL, '2015-05-22 17:56:03', '2015-05-22 17:57:54'),
 (41905, 5168, 16, 'Riacho Pequeno', NULL, '2015-05-22 17:56:03', '2015-05-22 17:57:54'),
 (41906, 5331, 16, 'Centro', NULL, '2015-05-22 17:56:03', '2015-05-22 17:57:54'),
@@ -36329,7 +36328,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (43258, 9087, 26, 'Vila Comerciários', NULL, '2015-05-22 17:56:09', '2015-05-22 17:57:54'),
 (43259, 6091, 18, 'Loteamento Residencial Cohiguaçu', NULL, '2015-05-22 17:56:09', '2015-05-22 17:57:54'),
 (43260, 1847, 8, 'San Diego', NULL, '2015-05-22 17:56:09', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (43261, 2803, 11, 'Centro', NULL, '2015-05-22 17:56:09', '2015-05-22 17:57:54'),
 (43262, 4066, 11, 'Parque Nossa Senhora das Graças', NULL, '2015-05-22 17:56:09', '2015-05-22 17:57:54'),
 (43263, 2694, 11, 'Esplanada', NULL, '2015-05-22 17:56:09', '2015-05-22 17:57:54'),
@@ -36874,7 +36873,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (43825, 9659, 26, 'Condomínio João Bernardino Souza (Zona Rural)', NULL, '2015-05-22 17:56:14', '2015-05-22 17:57:54'),
 (43826, 9659, 26, 'Estância Nova  Veneza (Zona Rural)', NULL, '2015-05-22 17:56:14', '2015-05-22 17:57:54'),
 (43827, 9659, 26, 'Estância São Pedro (Zona Rural)', NULL, '2015-05-22 17:56:14', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (43828, 9659, 26, 'Estância Alto Giro (Zona Rural)', NULL, '2015-05-22 17:56:14', '2015-05-22 17:57:54'),
 (43829, 9659, 26, 'Estância Santa Maria (Zona Rural)', NULL, '2015-05-22 17:56:14', '2015-05-22 17:57:54'),
 (43830, 9659, 26, 'Estância São Marcos II e IV (Zona Rural)', NULL, '2015-05-22 17:56:14', '2015-05-22 17:57:54'),
@@ -37453,7 +37452,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (45941, 375, 5, 'Centro', NULL, '2015-05-22 17:56:21', '2015-05-22 17:57:54'),
 (45942, 1023, 5, 'Centro', NULL, '2015-05-22 17:56:21', '2015-05-22 17:57:54'),
 (45943, 868, 5, 'Centro', NULL, '2015-05-22 17:56:21', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (45944, 997, 5, 'Itiquira', NULL, '2015-05-22 17:56:21', '2015-05-22 17:57:54'),
 (45945, 1031, 5, 'Bom Jesus dos Pobres', NULL, '2015-05-22 17:56:21', '2015-05-22 17:57:54'),
 (45946, 392, 5, 'Centro', NULL, '2015-05-22 17:56:21', '2015-05-22 17:57:54'),
@@ -38011,7 +38010,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (48990, 5914, 18, 'Vila Guarujá', NULL, '2015-05-22 17:56:26', '2015-05-22 17:57:54'),
 (48991, 5914, 18, 'Jardim das Acássias', NULL, '2015-05-22 17:56:26', '2015-05-22 17:57:54'),
 (48992, 9082, 26, 'Parque dos Manacás', NULL, '2015-05-22 17:56:26', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (48993, 6794, 18, 'Jardim Arco Íris', NULL, '2015-05-22 17:56:26', '2015-05-22 17:57:54'),
 (48994, 9668, 26, 'Jardim Aristocrata', NULL, '2015-05-22 17:56:26', '2015-05-22 17:57:54'),
 (48995, 9668, 26, 'Jardim São Norberto', NULL, '2015-05-22 17:56:26', '2015-05-22 17:57:54'),
@@ -38580,7 +38579,7 @@ INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_
 (49596, 9660, 26, 'Vila das Flores', NULL, '2015-05-22 17:56:31', '2015-05-22 17:57:54'),
 (49597, 9696, 26, 'Jardim Santa Catarina', NULL, '2015-05-22 17:56:31', '2015-05-22 17:57:54'),
 (49598, 9696, 26, 'Jardim Imperatriz', NULL, '2015-05-22 17:56:32', '2015-05-22 17:57:54');
-INSERT INTO `bairros` (`id_bairros`, `cidades_id`, `cidades_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
+INSERT INTO `bairro` (`id_bairro`, `cidade_id`, `cidade_uf_id`, `nome`, `in_habilitacao`, `dt_inclusao`, `dt_atualizacao`) VALUES
 (49599, 9696, 26, 'Jardim Paulista', NULL, '2015-05-22 17:56:32', '2015-05-22 17:57:54'),
 (49600, 1451, 6, 'José Geraldo da Cruz', NULL, '2015-05-22 17:56:32', '2015-05-22 17:57:54'),
 (49601, 1451, 6, 'Limoeiro', NULL, '2015-05-22 17:56:32', '2015-05-22 17:57:54'),

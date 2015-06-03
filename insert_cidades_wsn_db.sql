@@ -1,4 +1,4 @@
-INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
+INSERT INTO `cidade` (`id_cidade`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
 (1, 1, 'Acrelândia', '2015-05-22 17:28:52', NULL, NULL),
 (2, 1, 'Assis Brasil', '2015-05-22 17:28:52', NULL, NULL),
 (3, 1, 'Brasiléia', '2015-05-22 17:28:52', NULL, NULL),
@@ -780,7 +780,7 @@ INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilit
 (781, 5, 'Lajedão', '2015-05-22 17:28:44', NULL, NULL),
 (782, 5, 'Lajedinho', '2015-05-22 17:28:44', NULL, NULL),
 (783, 5, 'Lajedo Alto (Iaçu)', '2015-05-22 17:28:44', NULL, NULL);
-INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
+INSERT INTO `cidade` (`id_cidade`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
 (784, 5, 'Lajedo do Tabocal', '2015-05-22 17:28:44', NULL, NULL),
 (785, 5, 'Lamarão', '2015-05-22 17:28:44', NULL, NULL),
 (786, 5, 'Lamarão do Passe (São Sebastião do Passe)', '2015-05-22 17:28:44', NULL, NULL),
@@ -1540,7 +1540,7 @@ INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilit
 (1540, 6, 'Nascente (Amontada)', '2015-05-22 17:28:51', NULL, NULL),
 (1541, 6, 'Nenenlândia (Quixeramobim)', '2015-05-22 17:28:51', NULL, NULL),
 (1542, 6, 'Nossa Senhora do Livramento (Monsenhor Tabosa)', '2015-05-22 17:28:51', NULL, NULL);
-INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
+INSERT INTO `cidade` (`id_cidade`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
 (1543, 6, 'Nova Betânia (Farias Brito)', '2015-05-22 17:28:51', NULL, NULL),
 (1544, 6, 'Nova Betânia (Nova Russas)', '2015-05-22 17:28:51', NULL, NULL),
 (1545, 6, 'Nova Fátima (Ipueiras)', '2015-05-22 17:28:51', NULL, NULL),
@@ -2289,7 +2289,7 @@ INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilit
 (2293, 9, 'Quirinópolis', '2015-05-22 17:28:13', NULL, NULL),
 (2294, 9, 'Registro do Araguaia (Montes Claros de Goiás)', '2015-05-22 17:28:13', NULL, NULL),
 (2295, 9, 'Rianápolis', '2015-05-22 17:28:13', NULL, NULL);
-INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
+INSERT INTO `cidade` (`id_cidade`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
 (2297, 9, 'Rio Quente', '2015-05-22 17:28:13', NULL, NULL),
 (2298, 9, 'Rio Verde', '2015-05-22 17:28:13', NULL, NULL),
 (2299, 9, 'Riverlândia (Rio Verde)', '2015-05-22 17:28:13', NULL, NULL),
@@ -3038,7 +3038,7 @@ INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilit
 (3043, 11, 'Divino das Laranjeiras', '2015-05-22 17:28:21', NULL, NULL),
 (3044, 11, 'Divino de Virgolândia (Virgolândia)', '2015-05-22 17:28:21', NULL, NULL),
 (3045, 11, 'Divino Espírito Santo (Alterosa)', '2015-05-22 17:28:21', NULL, NULL);
-INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
+INSERT INTO `cidade` (`id_cidade`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
 (3046, 11, 'Divinolândia de Minas', '2015-05-22 17:28:21', NULL, NULL),
 (3047, 11, 'Divinópolis', '2015-05-22 17:28:21', NULL, NULL),
 (3048, 11, 'Divisa Alegre', '2015-05-22 17:28:21', NULL, NULL),
@@ -3787,7 +3787,7 @@ INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilit
 (3792, 11, 'Santo Antônio da Vargem Alegre (Bonfim)', '2015-05-22 17:28:28', NULL, NULL),
 (3793, 11, 'Santo Antônio do Amparo', '2015-05-22 17:28:28', NULL, NULL),
 (3794, 11, 'Santo Antônio do Aventureiro', '2015-05-22 17:28:28', NULL, NULL);
-INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
+INSERT INTO `cidade` (`id_cidade`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
 (3795, 11, 'Santo Antônio do Boqueirão (Unaí)', '2015-05-22 17:28:28', NULL, NULL),
 (3796, 11, 'Santo Antônio do Cruzeiro (Nepomuceno)', '2015-05-22 17:28:28', NULL, NULL),
 (3797, 11, 'Santo Antônio do Glória (Vieiras)', '2015-05-22 17:28:28', NULL, NULL),
@@ -4498,7 +4498,7 @@ INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilit
 (4502, 13, 'Terra Roxa (Juína)', '2015-05-22 17:27:40', NULL, NULL),
 (4503, 13, 'Tesouro', '2015-05-22 17:27:40', NULL, NULL),
 (4504, 13, 'Toricueyje (Barra do Garças)', '2015-05-22 17:27:40', NULL, NULL);
-INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
+INSERT INTO `cidade` (`id_cidade`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
 (4505, 13, 'Torixoréu', '2015-05-22 17:27:40', NULL, NULL),
 (4506, 13, 'Três Pontes (Rondonópolis)', '2015-05-22 17:27:40', NULL, NULL),
 (4507, 13, 'União do Sul', '2015-05-22 17:27:40', NULL, NULL),
@@ -5255,7 +5255,7 @@ INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilit
 (5261, 16, 'Goiana', '2015-05-22 17:27:48', NULL, NULL),
 (5262, 16, 'Gonçalves Ferreira (Caruaru)', '2015-05-22 17:27:48', NULL, NULL),
 (5263, 16, 'Granito', '2015-05-22 17:27:48', NULL, NULL);
-INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
+INSERT INTO `cidade` (`id_cidade`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
 (5264, 16, 'Gravatá', '2015-05-22 17:27:48', NULL, NULL),
 (5265, 16, 'Gravatá do Ibiapina (Taquaritinga do Norte)', '2015-05-22 17:27:48', NULL, NULL),
 (5266, 16, 'Grotão (Venturosa)', '2015-05-22 17:27:48', NULL, NULL),
@@ -5993,7 +5993,7 @@ INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilit
 (6008, 18, 'Cruz Machado', '2015-05-22 17:27:57', NULL, NULL),
 (6009, 18, 'Cruzeiro do Iguaçu', '2015-05-22 17:27:57', NULL, NULL),
 (6010, 18, 'Cruzeiro do Norte (Uraí)', '2015-05-22 17:27:57', NULL, NULL);
-INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
+INSERT INTO `cidade` (`id_cidade`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
 (6011, 18, 'Cruzeiro do Oeste', '2015-05-22 17:27:57', NULL, NULL),
 (6012, 18, 'Cruzeiro do Sul', '2015-05-22 17:27:57', NULL, NULL),
 (6013, 18, 'Cruzmaltina', '2015-05-22 17:27:57', NULL, NULL),
@@ -6705,7 +6705,7 @@ INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilit
 (6724, 18, 'Serrinha (Cambé)', '2015-05-22 17:28:04', NULL, NULL),
 (6725, 18, 'Serrinha (Campo Mourão)', '2015-05-22 17:28:04', NULL, NULL),
 (6726, 18, 'Serrinha (Castro)', '2015-05-22 17:28:04', NULL, NULL);
-INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
+INSERT INTO `cidade` (`id_cidade`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
 (6727, 18, 'Sertaneja', '2015-05-22 17:28:04', NULL, NULL),
 (6728, 18, 'Sertanópolis', '2015-05-22 17:28:04', NULL, NULL),
 (6729, 18, 'Sertãozinho (Engenheiro Beltrão)', '2015-05-22 17:28:04', NULL, NULL),
@@ -7441,7 +7441,7 @@ INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilit
 (7464, 23, 'Beluno (São Francisco de Assis)', '2015-05-22 17:27:26', NULL, NULL),
 (7465, 23, 'Benjamin Constant do Sul', '2015-05-22 17:27:26', NULL, NULL),
 (7466, 23, 'Bento Gonçalves', '2015-05-22 17:27:26', NULL, NULL);
-INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
+INSERT INTO `cidade` (`id_cidade`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
 (7467, 23, 'Bexiga (Rio Pardo)', '2015-05-22 17:27:26', NULL, NULL),
 (7468, 23, 'Boa Esperança (Rolante)', '2015-05-22 17:27:28', NULL, NULL),
 (7469, 23, 'Boa Vista (Salvador do Sul)', '2015-05-22 17:27:28', NULL, NULL),
@@ -8175,7 +8175,7 @@ INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilit
 (8197, 23, 'Serra dos Gregórios (Esmeralda)', '2015-05-22 17:27:35', NULL, NULL),
 (8198, 23, 'Serrinha (São Luiz Gonzaga)', '2015-05-22 17:27:35', NULL, NULL),
 (8199, 23, 'Sertão', '2015-05-22 17:27:35', NULL, NULL);
-INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
+INSERT INTO `cidade` (`id_cidade`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
 (8200, 23, 'Sertão Santana', '2015-05-22 17:27:35', NULL, NULL),
 (8201, 23, 'Sertãozinho (Alpestre)', '2015-05-22 17:27:35', NULL, NULL),
 (8202, 23, 'Sete de Setembro', '2015-05-22 17:27:35', NULL, NULL),
@@ -8942,7 +8942,7 @@ INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilit
 (8967, 26, 'Bertioga', '2015-05-22 17:28:58', NULL, NULL),
 (8968, 26, 'Bilac', '2015-05-22 17:28:58', NULL, NULL),
 (8969, 26, 'Birigüi', '2015-05-22 17:28:58', NULL, NULL);
-INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
+INSERT INTO `cidade` (`id_cidade`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
 (8970, 26, 'Biritiba-Mirim', '2015-05-22 17:28:58', NULL, NULL),
 (8971, 26, 'Biritiba-Ussu (Mogi das Cruzes)', '2015-05-22 17:28:58', NULL, NULL),
 (8972, 26, 'Boa Esperança do Sul', '2015-05-22 17:28:58', NULL, NULL),
@@ -9712,7 +9712,7 @@ INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilit
 (9736, 26, 'Timburi', '2015-05-22 17:29:05', NULL, NULL),
 (9737, 26, 'Toledo (Tupã)', '2015-05-22 17:29:05', NULL, NULL),
 (9738, 26, 'Torre de Pedra', '2015-05-22 17:29:05', NULL, NULL);
-INSERT INTO `cidades` (`id_cidades`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
+INSERT INTO `cidade` (`id_cidade`, `uf_id`, `nome`, `dt_inclusao`, `in_habilitacao`, `dt_atualizacao`) VALUES
 (9739, 26, 'Torrinha', '2015-05-22 17:29:05', NULL, NULL),
 (9740, 26, 'Trabiju', '2015-05-22 17:29:05', NULL, NULL),
 (9741, 26, 'Tremembé', '2015-05-22 17:29:05', NULL, NULL),
