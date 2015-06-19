@@ -43,7 +43,7 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`Usuario` (
   `nome` VARCHAR(100) NULL COMMENT 'Nome do usuário.' ,
   `senha` VARCHAR(10) NULL COMMENT 'Senha do usuário.' ,
   `email` VARCHAR(100) NULL COMMENT 'Email do usuário.' ,
-  `telefone` INT NULL COMMENT 'Telefone do usuário.' ,
+  `telefone` BIGINT NULL COMMENT 'Telefone do usuário.' ,
   `cargo` VARCHAR(30) NULL COMMENT 'Cargo do usuário: administrador ou vendedor' ,
   `in_situacao` VARCHAR(1) NULL COMMENT 'Situação do Usuário: Ativo (S) ou Inativo (N)' ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
@@ -57,43 +57,6 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`Usuario` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'Usuários com acesso às funcionalidades do sistema. \n';
-
-
--- -----------------------------------------------------
--- Table `wsn_db`.`Cliente`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `wsn_db`.`Cliente` (
-  `id_cliente` INT NOT NULL AUTO_INCREMENT COMMENT 'Número sequencial do cliente no banco de dados.' ,
-  `cnpj` VARCHAR(20) NULL COMMENT 'CNPJ do cliente.' ,
-  `inscricao_estadual` VARCHAR(45) NULL COMMENT 'Inscrição estadual do cliente.' ,
-  `razao_social` VARCHAR(200) NULL COMMENT 'Razão social do cliente.' ,
-  `nome_fantasia` VARCHAR(200) NULL COMMENT 'Nome fantasia do cliente.' ,
-  `in_situacao` VARCHAR(1) NULL COMMENT 'Situação do cliente: Ativo (S) ou Inativo (N)' ,
-  `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
-  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
-  PRIMARY KEY (`id_cliente`) )
-ENGINE = InnoDB
-COMMENT = 'Clientes que podem fazer pedidos de produtos.';
-
-
--- -----------------------------------------------------
--- Table `wsn_db`.`Produto`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `wsn_db`.`Produto` (
-  `id_produto` INT NOT NULL AUTO_INCREMENT COMMENT 'Número sequencial do produto no banco de dados.' ,
-  `nome` VARCHAR(100) NULL COMMENT 'Nome do produto.' ,
-  `imagem` VARCHAR(100) NULL COMMENT 'Endereço da imagem do produto no servidor.' ,
-  `preco_atual` DECIMAL NULL COMMENT 'Preço atual do produto, atualizado a cada remessa.' ,
-  `estoque_critico` INT NULL COMMENT 'Estoque mínimo a ser considerado para emissão de novos pedidos.' ,
-  `estoque_virtual` INT NULL COMMENT 'Estoque virtual considerando os pedidos realizados pelos clientes.' ,
-  `estoque_fisico` INT NULL COMMENT 'Estoque considerando a retirada de produtos no estoque da empresa.' ,
-  `peso` DECIMAL NULL COMMENT 'Peso do produto.' ,
-  `qtd_caixa` INT NULL COMMENT 'Quantidade de unidades do produto por caixa.' ,
-  `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
-  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
-  PRIMARY KEY (`id_produto`) )
-ENGINE = InnoDB
-COMMENT = 'Produtos tratados pelo Sistema.';
 
 
 -- -----------------------------------------------------
@@ -118,8 +81,8 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`Cidade` (
   `id_cidade` INT NOT NULL AUTO_INCREMENT COMMENT 'Número sequencial da cidade no banco de dados.' ,
   `uf_id` INT NOT NULL ,
   `nome` VARCHAR(50) NOT NULL COMMENT 'Nome da cidade.' ,
-  `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
   `in_habilitacao` VARCHAR(1) NULL COMMENT 'Indica se o registro está habilitado para uso no sistema: Habilitado (S) ou Não habilitado (N)' ,
+  `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
   `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
   PRIMARY KEY (`id_cidade`, `uf_id`) ,
   INDEX `fk_cidades_uf1` (`uf_id` ASC) ,
@@ -130,6 +93,78 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`Cidade` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'Cidades do Brasil.';
+
+
+-- -----------------------------------------------------
+-- Table `wsn_db`.`Bairro`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `wsn_db`.`Bairro` (
+  `id_bairro` INT NOT NULL ,
+  `cidade_id` INT NOT NULL ,
+  `cidade_uf_id` INT NOT NULL ,
+  `nome` VARCHAR(50) NULL ,
+  `in_habilitacao` VARCHAR(1) NULL COMMENT 'Indica se o registro está habilitado para uso no sistema: Habilitado (S) ou Não habilitado (N)' ,
+  `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
+  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
+  PRIMARY KEY (`id_bairro`) ,
+  INDEX `fk_bairros_cidades1` (`cidade_id` ASC, `cidade_uf_id` ASC) ,
+  CONSTRAINT `fk_bairros_cidades1`
+    FOREIGN KEY (`cidade_id` , `cidade_uf_id` )
+    REFERENCES `wsn_db`.`Cidade` (`id_cidade` , `uf_id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `wsn_db`.`Cliente`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `wsn_db`.`Cliente` (
+  `id_cliente` INT NOT NULL AUTO_INCREMENT COMMENT 'Número sequencial do cliente no banco de dados.' ,
+  `Bairro_id` INT NOT NULL ,
+  `cnpj` VARCHAR(20) NULL COMMENT 'CNPJ do cliente.' ,
+  `inscricao_estadual` VARCHAR(45) NULL COMMENT 'Inscrição estadual do cliente.' ,
+  `razao_social` VARCHAR(200) NULL COMMENT 'Razão social do cliente.' ,
+  `nome_fantasia` VARCHAR(200) NULL COMMENT 'Nome fantasia do cliente.' ,
+  `in_situacao` VARCHAR(1) NULL COMMENT 'Situação do cliente: Ativo (S) ou Inativo (N)' ,
+  `tp_logradouro` VARCHAR(20) NULL COMMENT 'Tipo de logradouro. Ex: Avenida, Rua, Travessa etc.' ,
+  `logradouro` VARCHAR(60) NULL COMMENT 'Nome do logradouro.' ,
+  `numero` VARCHAR(10) NULL COMMENT 'Número do logradouro.' ,
+  `complemento` VARCHAR(50) NULL COMMENT 'Complemento do endereço' ,
+  `cep` VARCHAR(9) NULL COMMENT 'Código de Endereçamento Postal' ,
+  `latitude` VARCHAR(100) NULL COMMENT 'Latitude do endereço' ,
+  `longitude` VARCHAR(100) NULL COMMENT 'Longitude do endereço.' ,
+  `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
+  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
+  PRIMARY KEY (`id_cliente`) ,
+  INDEX `fk_Cliente_Bairro1` (`Bairro_id` ASC) ,
+  CONSTRAINT `fk_Cliente_Bairro1`
+    FOREIGN KEY (`Bairro_id` )
+    REFERENCES `wsn_db`.`Bairro` (`id_bairro` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+COMMENT = 'Clientes que podem fazer pedidos de produtos.';
+
+
+-- -----------------------------------------------------
+-- Table `wsn_db`.`Produto`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `wsn_db`.`Produto` (
+  `id_produto` INT NOT NULL AUTO_INCREMENT COMMENT 'Número sequencial do produto no banco de dados.' ,
+  `nome` VARCHAR(100) NULL COMMENT 'Nome do produto.' ,
+  `imagem` VARCHAR(100) NULL COMMENT 'Endereço da imagem do produto no servidor.' ,
+  `preco_atual` DECIMAL(10,2) NULL COMMENT 'Preço atual do produto, atualizado a cada remessa.' ,
+  `estoque_critico` INT NULL COMMENT 'Estoque mínimo a ser considerado para emissão de novos pedidos.' ,
+  `estoque_virtual` INT NULL COMMENT 'Estoque virtual considerando os pedidos realizados pelos clientes.' ,
+  `estoque_fisico` INT NULL COMMENT 'Estoque considerando a retirada de produtos no estoque da empresa.' ,
+  `peso` DECIMAL(10,2) NULL COMMENT 'Peso do produto.' ,
+  `qtd_caixa` INT NULL COMMENT 'Quantidade de unidades do produto por caixa.' ,
+  `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
+  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
+  PRIMARY KEY (`id_produto`) )
+ENGINE = InnoDB
+COMMENT = 'Produtos tratados pelo Sistema.';
 
 
 -- -----------------------------------------------------
@@ -155,60 +190,6 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`Perfil_Transacao` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'Relação entre perfis e transações. Indica quais perfis possu' /* comment truncated */;
-
-
--- -----------------------------------------------------
--- Table `wsn_db`.`Bairro`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `wsn_db`.`Bairro` (
-  `id_bairro` INT NOT NULL ,
-  `cidade_id` INT NOT NULL ,
-  `cidade_uf_id` INT NOT NULL ,
-  `nome` VARCHAR(50) NULL ,
-  `in_habilitacao` VARCHAR(1) NULL COMMENT 'Indica se o registro está habilitado para uso no sistema: Habilitado (S) ou Não habilitado (N)' ,
-  `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
-  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
-  PRIMARY KEY (`id_bairro`) ,
-  INDEX `fk_bairros_cidades1` (`cidade_id` ASC, `cidade_uf_id` ASC) ,
-  CONSTRAINT `fk_bairros_cidades1`
-    FOREIGN KEY (`cidade_id` , `cidade_uf_id` )
-    REFERENCES `wsn_db`.`Cidade` (`id_cidade` , `uf_id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `wsn_db`.`Endereco`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `wsn_db`.`Endereco` (
-  `id_enderecos` INT NOT NULL AUTO_INCREMENT COMMENT ' Número sequencial do endereço no banco de dados.' ,
-  `cliente_id` INT NOT NULL COMMENT 'Número sequencial do cliente no banco de dados.' ,
-  `bairro_id` INT NOT NULL ,
-  `tp_logradouro` VARCHAR(20) NULL COMMENT 'Tipo de logradouro. Ex: Avenida, Rua, Travessa etc.' ,
-  `logradouro` VARCHAR(60) NULL COMMENT 'Nome do logradouro.' ,
-  `numero` VARCHAR(10) NULL COMMENT 'Número no logradouro.' ,
-  `complemento` VARCHAR(50) NULL COMMENT 'Complemento do endereço.' ,
-  `cep` VARCHAR(9) NULL COMMENT 'Código de Endereçamento Postal.' ,
-  `latitude` VARCHAR(100) NULL COMMENT 'Latitude do endereço.' ,
-  `longitude` VARCHAR(100) NULL COMMENT 'Longitude do endereço.' ,
-  `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
-  `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
-  PRIMARY KEY (`id_enderecos`, `cliente_id`) ,
-  INDEX `fk_enderecos_clientes1` (`cliente_id` ASC) ,
-  INDEX `fk_enderecos_bairros1` (`bairro_id` ASC) ,
-  CONSTRAINT `fk_enderecos_clientes1`
-    FOREIGN KEY (`cliente_id` )
-    REFERENCES `wsn_db`.`Cliente` (`id_cliente` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_enderecos_bairros1`
-    FOREIGN KEY (`bairro_id` )
-    REFERENCES `wsn_db`.`Bairro` (`id_bairro` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-COMMENT = 'Endereços de lojas';
 
 
 -- -----------------------------------------------------
@@ -263,11 +244,11 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`Pedido` (
   `cliente_id` INT NOT NULL COMMENT 'Número sequencial do cliente no banco de dados.' ,
   `usuario_id` INT NOT NULL COMMENT 'Número sequencial do vendedor no banco de dados.' ,
   `tp_pedido_id` INT NOT NULL ,
-  `perc_desconto` DECIMAL NULL COMMENT 'Percentual de desconto concedido ao pedido.' ,
+  `perc_desconto` DECIMAL(10,2) NULL COMMENT 'Percentual de desconto concedido ao pedido.' ,
   `in_nf` VARCHAR(1) NULL COMMENT 'Indicador de emissão de Nota Fiscal.' ,
   `dt_situacao_atual` TIMESTAMP NULL COMMENT 'Data da situação atual do pedido.' ,
-  `vl_total` DECIMAL NULL COMMENT 'Valor total do pedido. Derivado a partir do preço e da quantidade de cada produto no pedido.' ,
-  `vl_liquido` DECIMAL NULL COMMENT 'Valor total do pedido considerando descontos.' ,
+  `vl_total` DECIMAL(10,2) NULL COMMENT 'Valor total do pedido. Derivado a partir do preço e da quantidade de cada produto no pedido.' ,
+  `vl_liquido` DECIMAL(10,2) NULL COMMENT 'Valor total do pedido considerando descontos.' ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
   `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
   PRIMARY KEY (`id_pedido`) ,
@@ -312,7 +293,7 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`Produto_Pedido` (
   `produto_id` INT NOT NULL COMMENT 'Número sequencial do produto no banco de dados.' ,
   `pedido_id` INT NOT NULL COMMENT 'Número sequencial do pedido no banco de dados.' ,
   `quant` INT NULL COMMENT 'Quantidade do produto no pedido.' ,
-  `preco` DECIMAL NULL COMMENT 'Preço do produto no pedido.' ,
+  `preco` DECIMAL(10,2) NULL COMMENT 'Preço do produto no pedido.' ,
   `dt_inclusao` TIMESTAMP NOT NULL COMMENT 'Data de inclusão do registro no banco de dados.' ,
   `dt_atualizacao` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
   PRIMARY KEY (`produto_id`, `pedido_id`) ,
@@ -337,6 +318,7 @@ COMMENT = 'Relação entre produtos e pedidos. Indica quais produtos estã' /* c
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `wsn_db`.`Remessa` (
   `id_remessa` INT NOT NULL AUTO_INCREMENT COMMENT 'Número sequencial da remessa no banco de dados.' ,
+  `valor_remessa` DECIMAL(10,2) NULL COMMENT 'Valor total da remessa.' ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
   `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
   PRIMARY KEY (`id_remessa`) )
@@ -351,7 +333,7 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`Produto_Remessa` (
   `produto_id` INT NOT NULL COMMENT 'Número sequencial do produto no banco de dados.' ,
   `remessa_id` INT NOT NULL COMMENT 'Número sequencial da remessa no banco de dados.' ,
   `quant` INT NULL COMMENT 'Quantidade do produto na remessa.' ,
-  `preco` DECIMAL NULL COMMENT 'Preço do produto na remessa.' ,
+  `preco` DECIMAL(10,2) NULL COMMENT 'Preço do produto na remessa.' ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
   `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
   PRIMARY KEY (`produto_id`, `remessa_id`) ,
@@ -378,7 +360,7 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`Contato` (
   `id_contato` INT NOT NULL AUTO_INCREMENT COMMENT 'Número sequencial do contato no banco de dados.' ,
   `cliente_id` INT NOT NULL COMMENT 'Número sequencial do cliente no banco de dados.' ,
   `nome` VARCHAR(45) NULL COMMENT 'Nome da pessoa de contato do cliente.' ,
-  `telefone` VARCHAR(45) NULL COMMENT 'Telefone do contato.' ,
+  `telefone` BIGINT NULL COMMENT 'Telefone do contato.' ,
   `email` VARCHAR(45) NULL COMMENT 'e-mail do contato.' ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
   `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
@@ -444,11 +426,11 @@ CREATE  TABLE IF NOT EXISTS `wsn_db`.`H_Produto` (
   `produto_id` INT NOT NULL COMMENT 'Número sequencial do produto no banco de dados.' ,
   `nome` VARCHAR(100) NULL COMMENT 'Nome do produto.' ,
   `imagem` VARCHAR(100) NULL COMMENT 'Endereço da imagem do produto no servidor.' ,
-  `preco_atual` DECIMAL NULL COMMENT 'Preço atual do produto, atualizado a cada remessa.' ,
+  `preco_atual` DECIMAL(10,2) NULL COMMENT 'Preço atual do produto, atualizado a cada remessa.' ,
   `estoque_critico` INT NULL COMMENT 'Estoque mínimo a ser considerado para emissão de novos pedidos.' ,
   `estoque_virtual` INT NULL COMMENT 'Estoque virtual considerando os pedidos realizados pelos clientes.' ,
   `estoque_fisico` INT NULL COMMENT 'Estoque considerando a retirada de produtos no estoque da empresa.' ,
-  `peso` DECIMAL NULL COMMENT 'Peso do produto.' ,
+  `peso` DECIMAL(10,2) NULL COMMENT 'Peso do produto.' ,
   `qtd_caixa` INT NULL COMMENT 'Quantidade de unidades do produto por caixa.' ,
   `dt_inclusao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data de inclusão do registro no banco de dados.' ,
   `dt_atualizacao` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data de atualização do registro no banco de dados.' ,
